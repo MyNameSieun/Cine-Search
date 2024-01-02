@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #121212;
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  background-color: #121212;
+}
+.navbar-brand {
+  color: white;
+}
+.navbar-brand:hover {
+  color: #ef504e;
+}
+.navbar .btn {
+  color: white;
+  border: 1px solid white;
+}
+.navbar .btn:hover {
+  background-color: #ef504e;
+  border: 1px solid white;
+}
+.trailer-container {
+  padding-top: 75px;
+  display: flex;
+  justify-content: center;
+}
+.trailer-container video {
+  width: 90%;
+  height: 90%;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card-container hr {
+  color: white;
+  border: 1px solid;
+}
+.card-front,
+.card-back {
+  margin-top: 70px;
+
+  color: white;
+  border: 1px solid white;
+  border-radius: 18px;
+  z-index: 1;
+}
+.card-front img,
+.card-back img {
+  border-radius: 18px;
+}
+.card-back {
+  background-color: #16191e;
+}
+.card-back p {
+  overflow: hidden; /* -webkit-line-clamp 에 입력된 값 외의 텍스트를 모두 숨김 */
+  display: -webkit-box; /* 텍스트를 박스 형태로 구성 */
+  -webkit-line-clamp: 8; /* 입력된 값 만큼 문장 수 출력 */
+  -webkit-box-orient: vertical; /* 가로 정렬 */
+  margin: 0 30px;
+}
+.card-back btn {
+  color: aliceblue;
+}
