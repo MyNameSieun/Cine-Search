@@ -96,7 +96,7 @@ body {
 .card-back .card-text {
   overflow: hidden; /* -webkit-line-clamp 에 입력된 값 외의 텍스트를 모두 숨김 */
   display: -webkit-box; /* 텍스트를 박스 형태로 구성 */
-  -webkit-line-clamp: 9; /* 입력된 값 만큼 문장 수 출력 */
+  -webkit-line-clamp: 13; /* 입력된 값 만큼 문장 수 출력 */
   -webkit-box-orient: vertical; /* 가로 정렬 */
   margin: 0 30px;
 }
@@ -109,3 +109,28 @@ body {
   height: 10vh;
   color: white;
 }
+/*
+
+카드 뒤집기
+#wrap .card-container {
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+#wrap:hover .card-container {
+  transform: rotateY(180deg);
+}
+#wrap .card-container > div {
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+#wrap .card-container .card-front {
+  background-color: #f54;
+  z-index: 10;
+}
+
+#wrap .card-container .card-back {
+  background-color: #ccc;
+  z-index: 5;
+  transform: rotateY(180deg);
+} */
