@@ -57,26 +57,25 @@ body {
   border-radius: 18px;
   z-index: 1;
   height: 92%;
+  position: relative;
 }
 .card-front img {
   border-radius: 18px;
+  object-fit: cover;
 }
 .card-info {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 21px 31px 0px 30px;
 }
 
-.card-info .card-title {
-  display: inline;
-}
 .card-info .star {
-  display: inline;
+  text-align: right;
 }
 
 .card-back {
   background-color: #16191e;
-  position: relative;
 }
 .hr-top {
   margin-top: -1px;
