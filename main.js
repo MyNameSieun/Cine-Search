@@ -27,15 +27,6 @@ fetch(url)
       );
 
       displayMovies(filteredMovies);
-
-      // 여기
-      // 버튼 클릭시 id 출력 기능 -> document 사용시 버튼 안눌림
-      // 왜 card_container를 사용해야하나? document를 사용하면 안되나?
-      const movieIdBtn = document.querySelectorAll(".btn");
-      movieIdBtn.addEventListener("click", function () {
-        const movieId = movie.id;
-        alert(`영화 id : ${movieId}`);
-      });
     });
   })
   .catch((error) => {
@@ -81,5 +72,27 @@ function displayMovies(movies) {
       `; // HTML 요소의 내용을 변경
 
     flip.appendChild(card_container);
+
+    // 버튼 클릭시 id 출력 기능 -> document 사용시 버튼 안눌림
+    // 왜 card_container를 사용해야하나? document를 사용하면 안되나?
+
+    // document.querySelector(); => 1개 or 여러개? DOM 요소 1개 (배열 x)
+    // document.querySelectorAll(); => 여러개? DOM 요소 배열!!!
+    // 즉, document를 사용할거면 'movieIdBtn' => array이므로 forEach를 사용해야함.
+
+    // querySelectorAll 사용시 코드
+    const movieIdBtnList = card_container.querySelectorAll(".btn");
+    movieIdBtnList.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const movieId = movie.id;
+        alert(`영화 id : ${movieId}`);
+      });
+    });
+    // querySelector 사용시 코드
+    // const movieIdBtn = card_container.querySelector(".btn");
+    // movieIdBtn.addEventListener("click", function () {
+    //   const movieId = movie.id;
+    //   alert(`영화 id : ${movieId}`);
+    // });
   });
 }

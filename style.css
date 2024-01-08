@@ -12,13 +12,16 @@ body {
 }
 
 .navbar {
+  max-width: 1300px; /* 네비게이션 바의 최대 너비를 지정 */
+  margin: 0 auto; /* 위아래 여백 없이 가로 중앙에 배치 */
+
   position: fixed;
+  left: 0;
+  right: 0;
   background-color: #121212;
   z-index: 1000;
 }
-.container-fluid {
-  width: 100%;
-}
+
 .navbar-brand {
   color: white;
 }
@@ -49,7 +52,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
-  height: 340vh; /* 사이트 축소시 카드 겹침 */
+  height: 160vw; /*  사이트 축소시 카드 겹침 -> 미해결 */
 }
 .card-container {
   transition: all 0.9s;
