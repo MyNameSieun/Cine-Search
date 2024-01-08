@@ -78,7 +78,7 @@ function displayMovies(movies) {
     const movieIdBtn = card_container.querySelector(".btn");
     movieIdBtn.addEventListener("click", function () {
       const movieId = movie.id;
-      alert(`안녕${movieId}`);
+      alert(`영화 id : ${movieId}`);
     });
   });
 }
