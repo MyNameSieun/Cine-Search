@@ -1,47 +1,26 @@
-// Fetch API를 사용하여 데이터 가져오기
-const flip = document.querySelector(".flip");
-
 const url =
   "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
-
-let allMovies = []; // 초기에 모든 영화를 저장하기 위한 배열
 
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    allMovies = data.results;
-
-    displayMovies(allMovies); // 초기에 모든 영화 표시
-
-    const searchForm = document.querySelector("form");
-
-    searchForm.addEventListener("submit", function (event) {
-      event.preventDefault(); // 폼 제출 기본 동작 방지
-
-      const searchInput = document.querySelector("input[type=search]");
-      const keyword = searchInput.value.trim().toLowerCase();
-
-      // 검색 결과에 따라 영화 카드를 표시하거나 숨김
-      const filteredMovies = allMovies.filter((movie) =>
-        movie.title.toLowerCase().includes(keyword)
-      );
-
-      displayMovies(filteredMovies);
-    });
+    const movies = data.results; //  API로부터 받아온 데이터를 movies 변수에 저장
+    displayMovies(movies);
+    searchMovies();
   })
   .catch((error) => {
     console.error("데이터를 가져오는 중 오류 발생:", error);
   });
 
-// 영화 카드 표시 함수
-function displayMovies(movies) {
-  flip.innerHTML = ""; // 기존 카드 삭제
+const flip = document.querySelector(".flip"); // (1) 나중에 생성된 영화 카드를 추가할 위치를 참조하는 역할
 
-  movies.forEach((movie) => {
-    // card_container  생성 및 표시
-    const card_container = document.createElement("div"); // 엘리먼트를 생성
-    card_container.classList.add("card-container"); // "card_container" 클래스를 추가
+function displayMovies(movieList) {
+  movieList.forEach((movie) => {
+    const card_container = document.createElement("div"); // (2)새로운 <div> 요소를 생성
+    card_container.classList.add("card-container"); // (3) 생성한 <div> 요소에 "card-container" 클래스를 추가
 
+    // (4) 생성한 <div> 요소의 내부 HTML을 설정
+    // (5) 이때, 각 영화의 정보(제목, 포스터 이미지 경로, 평점, 줄거리 등)를 템플릿 리터럴을 활용하여 동적으로 삽입
     card_container.innerHTML = `
      <div class="card-front">
         <img src="https://image.tmdb.org/t/p/w500${
@@ -69,18 +48,13 @@ function displayMovies(movies) {
         <a class="btn btn-primary">영화 id</a>
       </div>
     </div>
-      `; // 요소 내부의 HTML을 설정
+      `;
 
+    // (6) 설정한 내부 HTML을 가진 card_container를 flip 요소의 자식 요소로 추가
     flip.appendChild(card_container);
 
-    // 버튼 클릭시 id 출력 기능 -> document 사용시 버튼 안눌림
-    // 왜 card_container를 사용해야하나? document를 사용하면 안되나?
-
-    // document.querySelector(); => 1개 or 여러개? DOM 요소 1개 (배열 x)
-    // document.querySelectorAll(); => 여러개? DOM 요소 배열!!!
-    // 즉, document를 사용할거면 'movieIdBtn' => array이므로 forEach를 사용해야함.
-
-    // querySelectorAll 사용시 코드
+    // 버튼 클릭시 영화 id 출력
+    //  querySelectorAll 사용시
     const movieIdBtnList = card_container.querySelectorAll(".btn");
     movieIdBtnList.forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -88,11 +62,41 @@ function displayMovies(movies) {
         alert(`영화 id : ${movieId}`);
       });
     });
-    // querySelector 사용시 코드
+    // querySelector 사용시
     // const movieIdBtn = card_container.querySelector(".btn");
     // movieIdBtn.addEventListener("click", function () {
     //   const movieId = movie.id;
     //   alert(`영화 id : ${movieId}`);
     // });
+  });
+}
+
+// 사용자 검색 기능
+function searchMovies() {
+  const searchForm = document.querySelector(".form-control");
+
+  // 사용자가 입력을 할 때마다 이벤트가 실행
+  searchForm.addEventListener("input", function () {
+    // this는 searchForm 요소를 참조
+    // toLowerCase: 입력된 텍스트를 소문자로 변환
+    const searchKeyword = this.value.toLowerCase();
+
+    // movieCards의 각 요소에 대해 함수를 실행
+    const movieCards = document.querySelectorAll(".card-container");
+    movieCards.forEach((card) => {
+      // 카드의 제목을 소문자로 변환하여 title 변수에 할당
+      const title = card.querySelector(".card-title").textContent.toLowerCase();
+
+      // title이 searchKeyword를 포함한다면 cardDisplay는 "block", 그렇지 않다면 "none"
+      const cardDisplay = title.includes(searchKeyword) ? "block" : "none";
+      card.style.display = cardDisplay;
+
+      // 아래와 같은 코드
+      //   if (title.includes(searchKeyword)) {
+      //     card.style.display = "block";
+      //   } else {
+      //     card.style.display = "none";
+      //   }
+    });
   });
 }
