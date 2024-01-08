@@ -1,3 +1,5 @@
+/* 반ㅇ */
+
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+KR:wght@100&display=swap");
 
 * {
@@ -52,7 +54,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
-  height: 160vw; /*  사이트 축소시 카드 겹침 -> 미해결 */
+  height: 3000px;
 }
 .card-container {
   transition: all 0.9s;

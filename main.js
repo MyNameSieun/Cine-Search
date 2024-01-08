@@ -69,7 +69,7 @@ function displayMovies(movies) {
         <a class="btn btn-primary">영화 id</a>
       </div>
     </div>
-      `; // HTML 요소의 내용을 변경
+      `; // 요소 내부의 HTML을 설정
 
     flip.appendChild(card_container);
 
