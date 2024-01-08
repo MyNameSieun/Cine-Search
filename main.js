@@ -32,9 +32,6 @@ fetch(url)
   .catch((error) => {
     console.error("데이터를 가져오는 중 오류 발생:", error);
   });
-//
-
-//
 
 // 영화 카드 표시 함수
 function displayMovies(movies) {
@@ -75,5 +72,13 @@ function displayMovies(movies) {
       `; // HTML 요소의 내용을 변경
 
     flip.appendChild(card_container);
+
+    // 버튼 클릭시 id 출력
+    // 왜 card_container를 사용해야하나? document를 사용하면 안되나?
+    const movieIdBtn = card_container.querySelector(".btn");
+    movieIdBtn.addEventListener("click", function () {
+      const movieId = movie.id;
+      alert(`안녕${movieId}`);
+    });
   });
 }
