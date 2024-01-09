@@ -2,7 +2,7 @@ import { searchMovies } from "./search.js";
 import { displayMovies } from "./displayMovies.js";
 import { config } from "./apikey.js";
 
-const API_KEY = config.apikey;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const url = `${API_KEY}`;
 
