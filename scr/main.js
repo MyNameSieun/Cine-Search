@@ -1,7 +1,10 @@
 import { searchMovies } from "./search.js";
 import { displayMovies } from "./displayMovies.js";
+import { config } from "./apikey.js";
 
-const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
+const API_KEY = config.apikey;
+
+const url = `${API_KEY}`;
 
 fetch(url)
   .then((response) => response.json())
