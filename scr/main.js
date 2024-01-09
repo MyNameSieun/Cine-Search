@@ -1,10 +1,7 @@
 import { searchMovies } from "./search.js";
 import { displayMovies } from "./displayMovies.js";
-import { config } from "./apikey.js";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
-const url = `${API_KEY}`;
+const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
 
 fetch(url)
   .then((response) => response.json())
