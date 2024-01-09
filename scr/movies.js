@@ -1,5 +1,5 @@
 // 영화 정보를 받아서 카드 HTML을 생성하는 함수
-function generateCardHTML(movie) {
+function generateCardHtml(movie) {
   const overview = movie.overview || "영화 정보가 없습니다.";
   return `
   <div class="card-front">
@@ -38,10 +38,9 @@ function displayMovies(movieList) {
     card_container.classList.add("card-container"); // (3) 생성한 <div> 요소에 "card-container" 클래스를 추가
 
     // (4) 생성한 <div> 요소의 내부 HTML을 설정
-    // (5) 이때, 각 영화의 정보(제목, 포스터 이미지 경로, 평점, 줄거리 등)를 템플릿 리터럴을 활용하여 동적으로 삽입
-    card_container.innerHTML = generateCardHTML(movie);
+    card_container.innerHTML = generateCardHtml(movie);
 
-    // (6) 설정한 내부 HTML을 가진 card_container를 flip 요소의 자식 요소로 추가
+    // (5) 설정한 내부 HTML을 가진 card_container를 flip 요소의 자식 요소로 추가
     flip.appendChild(card_container);
 
     // 버튼 클릭시 영화 id 출력
@@ -55,4 +54,4 @@ function displayMovies(movieList) {
   });
 }
 
-export { generateCardHTML, displayMovies };
+export { generateCardHtml, displayMovies };
