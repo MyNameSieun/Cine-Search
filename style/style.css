@@ -68,9 +68,7 @@ body {
   flex-wrap: wrap;
   gap: 30px;
 }
-.flip > child {
-  justify-content: start;
-}
+
 .card-container {
   transition: all 0.9s;
   transform-style: preserve-3d;
