@@ -1,5 +1,5 @@
 import { searchMovies } from "./search.js";
-import { displayMovies } from "./displayMovies.js";
+import { displayMovies } from "./movies.js";
 
 const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
 

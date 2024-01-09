@@ -138,7 +138,7 @@ body {
 .card-back .card-text {
   overflow: hidden; /* -webkit-line-clamp 에 입력된 값 외의 텍스트를 모두 숨김 */
   display: -webkit-box; /* 텍스트를 박스 형태로 구성 */
-  -webkit-line-clamp: 12; /* 입력된 값 만큼 문장 수 출력 */
+  -webkit-line-clamp: 14; /* 입력된 값 만큼 문장 수 출력 */
   -webkit-box-orient: vertical; /* 가로 정렬 */
   margin: 0 30px;
   line-height: 23px;
