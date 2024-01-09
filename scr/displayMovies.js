@@ -54,5 +54,36 @@ export function displayMovies(movieList) {
     //   const movieId = movie.id;
     //   alert(`영화 id : ${movieId}`);
     // });
+
+    // 코드 리팩토링이 필요할듯하다!
+    if (movie.overview == "") {
+      card_container.innerHTML = `
+      <div class="card-front">
+         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="${
+        movie.title
+      } 포스터" />
+         <div class="card-body">
+           <div class="card-info">
+             <h5 class="card-title">${movie.title}</h5>
+             <p class="star">⭐ ${movie.vote_average.toFixed(2)}</p>
+           </div>
+         </div>
+       </div>
+       <div class="card-back">
+         <div class="card-body">
+         <div class="card-info">
+           <h5 class="card-title">${movie.title}</h5>
+           <p class="star">⭐ ${movie.vote_average.toFixed(2)}</p>
+         </div>
+         <hr class="hr-top" />
+         <p class="card-text">
+           정보가 없습니다.
+         </p>
+         <hr class="hr-bottom" />
+         <a class="btn btn-primary">영화 id</a>
+       </div>
+     </div>
+       `;
+    }
   });
 }

@@ -13,3 +13,8 @@ fetch(url)
   .catch((error) => {
     console.error("데이터를 가져오는 중 오류 발생:", error);
   });
+
+// form 태그 reload 현상 방지
+document.querySelector("#inputForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+});
