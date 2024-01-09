@@ -14,7 +14,6 @@ body {
 .navbar {
   max-width: 1300px; /* 네비게이션 바의 최대 너비를 지정 */
   margin: 0 auto; /* 위아래 여백 없이 가로 중앙에 배치 */
-
   position: fixed;
   left: 0;
   right: 0;
@@ -46,20 +45,38 @@ body {
   width: 100%;
   height: 100%;
 }
-/* card */
-.flip {
+
+/* grid 사용 */
+/* .flip {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
-  height: 3000px;
 }
 .card-container {
   transition: all 0.9s;
   transform-style: preserve-3d;
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 600px;
+} */
+
+/* flex 사용 */
+.flip {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.flip > child {
+  justify-content: start;
+}
+.card-container {
+  transition: all 0.9s;
+  transform-style: preserve-3d;
+  position: relative;
+  flex-basis: 300px; /* 초기 크기 */
+  height: 600px;
 }
 
 .card-container:hover {
