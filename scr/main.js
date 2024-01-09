@@ -1,5 +1,4 @@
-const url =
-  "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
+const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
 
 fetch(url)
   .then((response) => response.json())
@@ -14,6 +13,11 @@ fetch(url)
 
 const flip = document.querySelector(".flip"); // (1) 나중에 생성된 영화 카드를 추가할 위치를 참조하는 역할
 
+document.querySelector("#inputForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log("e", e);
+});
+
 function displayMovies(movieList) {
   movieList.forEach((movie) => {
     const card_container = document.createElement("div"); // (2)새로운 <div> 요소를 생성
@@ -23,9 +27,9 @@ function displayMovies(movieList) {
     // (5) 이때, 각 영화의 정보(제목, 포스터 이미지 경로, 평점, 줄거리 등)를 템플릿 리터럴을 활용하여 동적으로 삽입
     card_container.innerHTML = `
      <div class="card-front">
-        <img src="https://image.tmdb.org/t/p/w500${
-          movie.poster_path
-        }" class="card-img-top" alt="${movie.title} 포스터" />
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="${
+      movie.title
+    } 포스터" />
         <div class="card-body">
           <div class="card-info">
             <h5 class="card-title">${movie.title}</h5>
