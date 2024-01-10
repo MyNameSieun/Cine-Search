@@ -1,0 +1,22 @@
+/* image-container */
+
+.image-container {
+  height: 700px; /* 임시값 */
+  background-color: rgb(73, 73, 73);
+}
+
+/* tap-container */
+
+.tap-container {
+  height: 70px; /* 임시값 */
+  background-color: rgb(107, 81, 81);
+}
+
+/* detailed-container */
+
+.detailed-container {
+  height: 730px; /* 임시값 */
+  background-color: rgb(73, 73, 73);
+}
+
+/* review-container */

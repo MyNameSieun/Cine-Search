@@ -1,3 +1,17 @@
+const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
+
+function showMovies() {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const movies = data.results; //  API로부터 받아온 데이터를 movies 변수에 저장
+      displayMovies(movies);
+    })
+    .catch((error) => {
+      console.error("데이터를 가져오는 중 오류 발생:", error);
+    });
+}
+
 // 영화 정보를 받아서 카드 HTML을 생성하는 함수
 function generateCardHtml(movie) {
   const overview = movie.overview || "영화 정보가 없습니다.";
@@ -23,7 +37,7 @@ function generateCardHtml(movie) {
      </p>
      <hr class="hr-bottom" />
 
-     <a class="btn btn-primary">영화 id</a>
+     <a class="btn btn-primary" href="details.html">상세 정보</a>
    </div>
  </div>
  `;
@@ -34,13 +48,6 @@ function generateCardHtml(movie) {
   el.classList.add("card-container");
   // 생성한 <div> 요소의 내부 HTML을 설정
   el.innerHTML = html;
-
-  // 버튼 클릭시 영화 id 출력
-  const movieIdBtn = el.querySelector(".btn");
-  movieIdBtn.addEventListener("click", function () {
-    const movieId = movie.id;
-    alert(`영화 id : ${movieId}`);
-  });
 
   return el;
 }
@@ -58,4 +65,4 @@ function displayMovies(movieList) {
   });
 }
 
-export { generateCardHtml, displayMovies };
+export { showMovies, generateCardHtml, displayMovies };

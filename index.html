@@ -10,11 +10,13 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/base.css" />
     <link rel="stylesheet" href="./style/style.css" />
     <script type="module" src="./src/main.js"></script>
   </head>
   <body>
-    <div class="container">
+    <main class="container">
       <!--navbar-->
       <nav class="navbar">
         <div class="container-fluid">
@@ -25,20 +27,22 @@
           </form>
         </div>
       </nav>
+
       <!--trailer-container-->
       <figure class="trailer-container">
-        <figcaption>movie trailer</figcaption>
         <video playsinline controls poster="./assets/images/라라랜드 포스터_가로.jpg">
           <source src="./assets/video/라라랜드 트레일러.mp4" type="video/mp4" />
         </video>
       </figure>
 
       <!--card-->
-      <main>
+      <section>
         <div class="flip"></div>
-      </main>
-      <footer class="footer"></footer>
-    </div>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer class="footer"></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
