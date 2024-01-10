@@ -1,6 +1,7 @@
-const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
-
 function showMovies() {
+  const api_key = "13b14dad7e58423573b90a27c47ebfbf";
+  const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=ko-KR`;
+
   fetch(url)
     .then((response) => response.json())
     .then((data) => {

@@ -3,20 +3,30 @@
 .image-container {
   height: 700px; /* 임시값 */
   background-color: rgb(73, 73, 73);
+  color: white;
+  display: flex;
+  position: relative;
+}
+.movie-info > img {
+  height: 100%;
+  width: 100%;
 }
 
+.top-info {
+  display: flex;
+  flex-direction: row;
+}
+.top-info > p {
+  margin-right: 10px; /* 임시값 */
+  font-size: 22px; /* 임시값 */
+}
+.bottom-info {
+}
 /* tap-container */
 
 .tap-container {
   height: 70px; /* 임시값 */
   background-color: rgb(107, 81, 81);
-}
-
-/* detailed-container */
-
-.detailed-container {
-  height: 730px; /* 임시값 */
-  background-color: rgb(73, 73, 73);
 }
 
 /* review-container */

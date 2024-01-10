@@ -13,19 +13,33 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/base.css" />
     <link rel="stylesheet" href="./style/details.css" />
+    <script type="module" src="./src/details.js"></script>
   </head>
   <body>
     <main class="container">
       <!--navbar-->
       <nav class="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand">Ciné Search</a>
+          <a class="navbar-brand" href="./index.html">Ciné Search</a>
         </div>
       </nav>
 
-      <!-- movie image_서지원 -->
+      <!-- movie image_이혜진 -->
       <figure class="image-container">
-        <img src="" alt="" srcset="" />
+        <!-- <div class="movie-info">
+          <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" alt="${movie.title} 포스터" />
+          <div class="top-info">
+            <p class="star">⭐${movie.vote_average.toFixed(2)}</p>
+            <p class="release-date">${movie.release_date}</p>
+            <p class="runtime">${movie.runtime}분</p>
+            <p class="genres">SF</p>
+          </div>
+          <div class="bottom-info">
+            <p class="tagline">${movie.tagline}</p>
+            <p class="overview">${movie.overview}</p>
+            <p class="title">${movie.title}</p>
+          </div>
+        </div> -->
       </figure>
 
       <!-- tap meun_이혜진 -->
@@ -34,22 +48,11 @@
         <div>영화리뷰</div>
       </section>
 
-      <!-- details info_이혜진 -->
-      <section class="detailed-container">
-        <div>반도</div>
-        <div>최초의 3D CG! 제작 기간 7년최고의 웃음과 감동!</div>
-        <div>
-          최강의 스케일옷까지 갈아입은 볼록 짱구 등장!어느 날, 우주에서 날아온 검은 빛과 하얀 빛이 떡잎마을을 향해
-          떨어진다.평소처럼 저녁밥을 손꼽아 기다리던 짱구는 하얀 빛에 정통으로 맞게 되고
-        </div>
-        <div>제작사</div>
-      </section>
-
       <!-- movie review -->
       <section class="review-container">
-        <!-- 서지원 -->
-        <article class="comment"></article>
         <!-- 강지수 -->
+        <article class="comment"></article>
+        <!-- 서지원 -->
         <article class="comment-list"></article>
       </section>
     </main>
