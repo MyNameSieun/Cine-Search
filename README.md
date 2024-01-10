@@ -18,4 +18,4 @@ Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다.
 - 버튼 클릭시 클릭한 영화 id 를 나타내는 alert 창을 띄웁니다.
 - 영화 제목을 검색하여 찾을 수 있도록 합니다.
 
-![Alt text](<assets/video/Ciné Search.gif>)
+![Ciné Search](<assets/video/Ciné Search.gif>)
