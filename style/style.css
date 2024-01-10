@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-  max-width: 1300px; /* 네비게이션 바의 최대 너비를 지정 */
+  max-width: 1330px; /* 네비게이션 바의 최대 너비를 지정 */
   margin: 0 auto; /* 위아래 여백 없이 가로 중앙에 배치 */
   position: fixed;
   left: 0;
