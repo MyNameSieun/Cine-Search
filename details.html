@@ -48,7 +48,27 @@
       <!-- movie review -->
       <section class="review-container">
         <!-- 서지원 -->
-        <article class="comment"></article>
+        <article class="comment">
+          <div class="review-top-info">
+            댓글 <span id="review-cnt">1</span>개
+          </div>
+          <form id="reviewForm" class="review-form">
+            <div class="user-info-area">
+              <input type="text" class="review-input" placeholder="닉네임">
+              <input type="password" class="review-input" placeholder="비밀번호">
+            </div>
+            <div class="review-cont-area">
+              <div class="thumb-box"></div>
+              <div class="user-comment-box">
+                <textarea name="" id="" class="review-textarea" cols="30" rows="1" placeholder="리뷰를 입력해주세요."></textarea>
+                <div class="review-btn-box">
+                  <button type="button" class="btn-cancel">취소</button>
+                  <button type="submit" class="btn-send">등록</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </article>
         <!-- 강지수 -->
         <article class="comment-list"></article>
       </section>

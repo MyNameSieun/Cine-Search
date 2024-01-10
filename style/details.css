@@ -20,3 +20,98 @@
 }
 
 /* review-container */
+.review-top-info{
+  margin:20px 0; 
+  color:#fff; 
+  font-weight: bold;
+}
+/* review form 영역 */
+.review-form{
+  padding:15px; 
+  border: 1px solid #fff; 
+  border-radius: 5px;
+}
+.user-info-area{
+  margin-bottom: 15px;
+}
+.review-input{
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+}
+.review-input + .review-input{
+  margin-left: 10px;
+}
+.review-cont-area{
+  display: flex;
+  align-items: top;
+}
+.thumb-box{
+  width: 40px; 
+  height: 40px; 
+  border-radius: 40px; 
+  background-color: #fff;
+}
+.user-comment-box{
+  margin-left: 15px; 
+  width: calc(100% - 55px);
+}
+.review-textarea{
+  padding:2px 5px; 
+  width: 100%; 
+  height: 25px; 
+  resize: none; 
+  background-color: transparent; 
+  border-width: 0 0 1px 0; 
+  border-color: #fff;
+  outline: none;
+  color:#fff; 
+  box-sizing: border-box; 
+  overflow: hidden;
+}
+.review-input::placeholder,
+.review-textarea::placeholder{
+  color:#fff
+}
+.review-btn-box{
+  margin:10px 0;
+  display: none;
+  /* display: flex;  */
+  justify-content: right;
+}
+.btn-send,
+.btn-cancel{
+  padding:0 12px; 
+  height: 36px;
+  line-height: 36px; 
+  border: none; 
+  border-radius: 20px; 
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .3s; /*색상변경 부드럽게 처리*/
+}
+.btn-send{
+  margin-left: 10px;
+  background-color:#0080ff;
+  color:#fff;
+}
+.btn-send:hover{
+  background-color: #0060bf;
+}
+.btn-send:disabled{
+  background-color: #909090;
+  color:#262626;
+}
+.btn-cancel{
+  background-color: transparent;
+  color:#fff;
+}
+.btn-cancel:hover{
+  background-color: #dbdbdb;
+  color:#262626;
+}
