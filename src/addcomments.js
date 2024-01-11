@@ -5,11 +5,19 @@
 
 import { loadData } from "./review.js";
 
-const reviews = loadData(); //로컬 스토리지 값 받아오기
-console.log(reviews); //{writer: "지원", password: "123", contents: "영화굿", id: 0}
+const jsonReviewData = loadData(); //로컬 스토리지 값 받아오기
+console.log(jsonReviewData); //{"848326":[{"writer":"지원3","password":"1234","contents":"안녕","id":2}]}
 
-reviews.forEach((review) => {
-  let nickname = localStorage.getItem("writer");
-  let password = localStorage.getItem("password");
-  let contents = localStorage.getItem("contents");
-});
+const reviewKeyData = JSON.parse(jsonReviewData); //json문자열을 객체로 파싱
+// console.log(reviewKeyData) //{848326: Array(1)}
+// console.log(reviewKeyData['848326'][0]); //848326은 추후에 아이디값으로
+ const a = reviewKeyData[0];
+
+ console.log(jsonReviewData.length)
+
+ for (let i = 0; i<jsonReviewData.length; i++){
+
+ }
+
+
+  

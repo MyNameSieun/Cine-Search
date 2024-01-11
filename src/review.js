@@ -17,7 +17,7 @@ const resetForm = () => {
 };
 
 //리뷰 불러오기
-const loadData = () => {
+export const loadData = () => {
   let data = localStorage.getItem(REVIEW_KEY);
   return data;
 }
@@ -35,15 +35,15 @@ const saveReview = (name, password, contents) => {
 
 
   //이전에 등록한 리뷰 있으면 불러와서 데이터 넣기
-  if(prevData[movieId]){
-    // console.log(prevData);
-    // console.log(prevData[movieId]);
-    // sendData[movieId] = prevData
-    
-    reviewPushData = prevData[movieId];
-    
-    // sendData[movieId] = prevData;
-  }
+    if(prevData[movieId]){
+      // console.log(prevData);
+      // console.log(prevData[movieId]);
+      // sendData[movieId] = prevData
+      
+      reviewPushData = prevData[movieId];
+      
+      // sendData[movieId] = prevData;
+    }
   
   const dataObj = {
     'writer' : name,
@@ -60,7 +60,7 @@ const saveReview = (name, password, contents) => {
   // debugger
   // function pushReviewData() {
   // localStorage.setItem(REVIEW_KEY, JSON.stringify(reviewPushData));
-  localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
+  // localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
   // }
   
   // pushReviewData();
@@ -80,7 +80,7 @@ const countReview = () => {
   // const length = data[movieId] !== null ? data[movieId].length : 0; //data null 이 아니면 리뷰 수 구하기
   $reviewCnt.innerHTML = length;
 }
-countReview();
+// countReview();
 
 //작성폼 클릭 시 버튼 영역 활성화
 $reviewTextarea.addEventListener('click', () => {
@@ -120,7 +120,7 @@ $btnSend.addEventListener('click', () => {
 
   saveReview(writer, password, comment);
   alert('리뷰 등록이 완료되었습니다.');
-  countReview();
+  // countReview();
   resetForm();
 });
 
