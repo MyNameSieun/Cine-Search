@@ -1,5 +1,5 @@
 import { searchMovies } from "./search.js";
-import { showMovies } from "./movies.js";
+import { showMovies } from "./movie.js";
 showMovies();
 searchMovies();
 
