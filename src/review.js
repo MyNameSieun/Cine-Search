@@ -16,7 +16,7 @@ let id = 0;
 
 //리뷰 데이터 추가
 const saveReview = (name, password, contents) => {
-  let loadData1 = JSON.parse(loadData());
+  let prevData = JSON.parse(loadData());
   let reviewPushData = [];
   // let reviewPushData = loadData1 !== null ? [] : loadData1;
   // let maxId = 0;
@@ -29,7 +29,6 @@ const saveReview = (name, password, contents) => {
   //     id = maxId;
   //   }
   // }
-  
   
   const dataObj = {
     'writer' : name,
@@ -57,7 +56,7 @@ const loadData = () => {
 const countReview = () => {
   const $reviewCnt = document.querySelector('.review-cnt');
   let data = loadData();
-  let length = JSON.parse(data).length;
+  let length = data !== null ? JSON.parse(data).length : 0; //data null 이 아니면 리뷰 수 구하기
   $reviewCnt.innerHTML = length;
 }
 countReview();
