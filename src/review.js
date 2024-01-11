@@ -49,8 +49,18 @@ const saveReview = (name, password, contents) => {
 
 //리뷰 불러오기
 const loadData = () => {
-  return localStorage.getItem(REVIEW_KEY);
+  let data = localStorage.getItem(REVIEW_KEY);
+  return data;
 }
+
+//리뷰 수 체크
+const countReview = () => {
+  const $reviewCnt = document.querySelector('.review-cnt');
+  let data = loadData();
+  let length = JSON.parse(data).length;
+  $reviewCnt.innerHTML = length;
+}
+countReview();
 
 //작성폼 클릭 시 버튼 영역 활성화
 $reviewTextarea.addEventListener('click', () => {
@@ -64,17 +74,17 @@ $btnCancel.addEventListener('click', () => {
   $btnSend.setAttribute('disabled', true);
 });
 
+//등록 버튼 이벤트
 $btnSend.addEventListener('click', () => {
   const writer = $writer.value;
-  console.log('ddd');
-  saveReview(writer, 1, 1);
-  console.log('ddd');
+  const password = $password.value;
+  const comment = $reviewTextarea.value;
+  saveReview(writer, password, comment);
+  alert('리뷰 등록이 완료되었습니다.');
+  countReview();
 });
 
 //작성폼에 입력 시 등록 버튼 활성화
 $reviewTextarea.addEventListener('keyup', () => {
   $btnSend.removeAttribute('disabled');
 });
-
-
-console.log(reviewData);
