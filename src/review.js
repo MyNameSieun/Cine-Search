@@ -69,6 +69,10 @@ $reviewTextarea.addEventListener('click', () => {
   $reviewBtnBox.style.display = 'flex';
 });
 
+$reviewTextarea.addEventListener('keyup', () => {
+  $reviewBtnBox.style.display = 'flex';
+});
+
 //취소 버튼 클릭시 버튼 영역 비활성화
 $btnCancel.addEventListener('click', () => {
   $reviewBtnBox.style.display = 'none';
