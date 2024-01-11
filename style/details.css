@@ -1,8 +1,5 @@
 /* image-container */
 
-.image-container {
-}
-
 .movie-detail-on-image {
   height: 700px; /* 임시값 */
   background-color: rgb(73, 73, 73);
@@ -16,7 +13,6 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  background: linear-gradient(to top, black, red);
 }
 
 .movie-info {
@@ -27,7 +23,7 @@
   flex-direction: column;
   padding-left: 60px;
   padding-bottom: 60px;
-  background: linear-gradient(to top, rgb(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, transparent);
 }
 
 .top-info {
@@ -156,14 +152,62 @@
   color: #262626;
 }
 
+/* 저장된 리뷰 댓글 불러와서 밑에 추가 */
 .comment-list {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .comment-wrap-box {
-  background-color: #0060bf;
-  height: 80px;
+  padding: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+.thumb-box-in-list {
+  width: 45px;
+  height: 45px;
+  background-color: #dbdbdb;
+  margin-right: 13px;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.comment-contents {
+  align-self: flex-start;
+  margin-top: 3px;
+  height: fit-content;
+}
+
+.writer-name {
+  margin-bottom: 8px;
+  display: block;
+  font-weight: bold;
+}
+
+.writed-comment {
+  color: #dbdbdb;
+  line-height: 23px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+  color: white;
+  justify-self: right;
+  display: block;
+  margin-left: 20px;
+}
+
+.thumb-name-comment {
+  display: flex;
+  justify-self: flex-start;
 }
