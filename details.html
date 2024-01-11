@@ -54,8 +54,8 @@
           <div class="review-top-info">댓글 <span id="review-cnt">1</span>개</div>
           <form id="reviewForm" class="review-form">
             <div class="user-info-area">
-              <input type="text" class="review-input" placeholder="닉네임" />
-              <input type="password" class="review-input" placeholder="비밀번호" />
+              <input type="text" id="writer" class="review-input" placeholder="닉네임" />
+              <input type="password" id="password" class="review-input" placeholder="비밀번호" />
             </div>
             <div class="review-cont-area">
               <div class="thumb-box"></div>
@@ -70,11 +70,11 @@
                 ></textarea>
                 <div class="review-btn-box">
                   <button type="button" class="btn-cancel">취소</button>
-                  <button type="submit" class="btn-send">등록</button>
+                  <button type="submit" class="btn-send" disabled>등록</button>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </article>
         <!-- 서지원 -->
         <article class="comment-list">
