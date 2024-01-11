@@ -2,10 +2,15 @@ const $commentList = document.getElementById('commentList');
 
 import { loadData } from "./review.js";
 
-const movieId = 848326; //848326 임시 데이터, 이후에 영화 아이디 가져와서 넣어야함.
+const urlSearch = new URLSearchParams(location.search);
+const movieId = urlSearch.get("id");
 const reviewData = JSON.parse(loadData()); //로컬 스토리지 값 받아오기
 
-const reviewDataArr = reviewData[movieId];
+// const reviewDataArr = reviewData[movieId];
+const reviewDataArr = [];
+if(reviewData && reviewData[movieId]){ //reviewData 데이터가 있고, movieId로 된 리뷰가 있을 때
+  reviewDataArr = reviewData[movieId]
+}
 console.log(reviewDataArr); 
 
 reviewDataArr.forEach(reviewData => {
