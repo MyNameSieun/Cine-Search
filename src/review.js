@@ -22,27 +22,18 @@ const loadData = () => {
   return data;
 }
 
-//리뷰 등록 - localstolage
-// const pushReviewData = () => {
-//   localStorage.setItem(REVIEW_KEY, JSON.stringify(reviewPushData));
-// }
-
 //리뷰 데이터 추가
 const saveReview = (name, password, contents) => {
   let prevData = JSON.parse(loadData());
   let sendData = {};
   let reviewPushData = [];
 
-
   //이전에 등록한 리뷰 있으면 불러와서 데이터 넣기
+  if(prevData){
+    sendData = prevData;
+  }
   if(prevData[movieId]){
-    // console.log(prevData);
-    // console.log(prevData[movieId]);
-    // sendData[movieId] = prevData
-    
     reviewPushData = prevData[movieId];
-    
-    // sendData[movieId] = prevData;
   }
   
   const dataObj = {
@@ -50,20 +41,14 @@ const saveReview = (name, password, contents) => {
     'password' : password,
     'contents' : contents,
     'id' : id,
-    // 'movieId' : movieId //임시 데이터
   }
 
   reviewPushData.push(dataObj);
   sendData[movieId] = reviewPushData;
   console.log(sendData);
 
-  // debugger
-  // function pushReviewData() {
-  // localStorage.setItem(REVIEW_KEY, JSON.stringify(reviewPushData));
   localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
-  // }
   
-  // pushReviewData();
   id += 1;
 }
 
@@ -75,9 +60,6 @@ const countReview = () => {
   if(data[movieId]){
     length = data[movieId].length;
   }
-  console.log(data[movieId]);
-  // const length = !data[movieId] || data[movieId] !== null ? data[movieId].length : 0; //data null 이 아니면 리뷰 수 구하기
-  // const length = data[movieId] !== null ? data[movieId].length : 0; //data null 이 아니면 리뷰 수 구하기
   $reviewCnt.innerHTML = length;
 }
 countReview();
