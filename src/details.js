@@ -22,7 +22,7 @@ function showMovies() {
 }
 
 function generateMoviesInfo(movie) {
-  console.log(movie);
+  // console.log(movie);
   const html = `
         <img src="https://image.tmdb.org/t/p/original/${movie.backdrop_path}" alt="${movie.title} 포스터" />
         <div class="movie-info">
