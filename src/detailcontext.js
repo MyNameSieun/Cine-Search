@@ -34,11 +34,11 @@ const movieProperty = (selectedMovie) => {
 detailtitle.addEventListener('click', (event) => {
   event.preventDefault();
   detailcontainer.style.display = "block";
-}); //없거나 보이지 않은 경우 보이게 한다.
+});
 
 commenttitle.addEventListener('click', (event) => {
   event.preventDefault();
   document.querySelector(".comment").style.display = "none"
   detailcontainer.style.display = "none";
-});//여기에 다른 섹션 추가할 예정입니다.
+});
 
