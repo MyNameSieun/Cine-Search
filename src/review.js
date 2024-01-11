@@ -17,7 +17,7 @@ const resetForm = () => {
 };
 
 //리뷰 불러오기
-const loadData = () => {
+export const loadData = () => {
   let data = localStorage.getItem(REVIEW_KEY);
   return data;
 }

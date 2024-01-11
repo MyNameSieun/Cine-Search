@@ -7,7 +7,7 @@ function showMovies() {
     .then((response) => response.json())
     .then((data) => {
       const movie = data;
-      console.log(movie);
+      // console.log(movie);
       displayMoviesInfo([movie]); // 왜? -> 객체라
       // const movies = data.results; //  API로부터 받아온 데이터를 movies 변수에 저장
       // displayMoviesInfo(movies);
@@ -18,7 +18,7 @@ function showMovies() {
 }
 
 function generateMoviesInfo(movie) {
-  console.log(movie);
+  // console.log(movie);
   const html = `
         <img src="https://image.tmdb.org/t/p/original/${movie.backdrop_path}" alt="${movie.title} 포스터" />
         <div class="movie-info">
