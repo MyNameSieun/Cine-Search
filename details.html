@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/base.css" />
     <link rel="stylesheet" href="./style/details.css" />
+    <script type="module" src="./src/detailcontext.js"></script>
   </head>
   <body>
     <main class="container">
@@ -30,19 +31,24 @@
 
       <!-- tap meun_이혜진 -->
       <section class="tap-container">
-        <div>상세정보</div>
-        <div>영화리뷰</div>
+        <div class=selectedContainer>
+        <div id = "movieDetailInformation">상세정보</div>
+        <div class="selectorBox" id="detailSelectorBox"></div>
+        </div>
+
+        <div class=selectedContainer>
+        <div id = "movieComment">영화리뷰</div>
+        <div class="selectorBox" id="commentSelectorBox"></div>
+       </div>
       </section>
 
       <!-- details info_이혜진 -->
-      <section class="detailed-container">
-        <div>반도</div>
-        <div>최초의 3D CG! 제작 기간 7년최고의 웃음과 감동!</div>
-        <div>
-          최강의 스케일옷까지 갈아입은 볼록 짱구 등장!어느 날, 우주에서 날아온 검은 빛과 하얀 빛이 떡잎마을을 향해
-          떨어진다.평소처럼 저녁밥을 손꼽아 기다리던 짱구는 하얀 빛에 정통으로 맞게 되고
+      <section class="detailed-container" style="display:block;">
+        <div class = "movieTitle"></div> 
+        <div class = "movieTagLine"></div>
+        <div class = "movieOverView">
         </div>
-        <div>제작사</div>
+        <div class="movieMadeCompany"></div>
       </section>
 
       <!-- movie review -->
