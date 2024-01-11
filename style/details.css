@@ -3,6 +3,92 @@
 .image-container {
 }
 
+
+/* 이혜진/detailcontext */
+
+
+.image-container {
+  height: 700px; /* 임시값 */
+  background-color: rgb(73, 73, 73);
+}
+
+/* /* <!-- tap meun_이혜진 --> */
+
+.tap-container {
+  height: 100px;  
+  margin: 50px auto 10px auto;
+  padding: 10px 60px 10px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  font-size: 30px;
+  background-color: transparent;
+}
+
+#movieDetailInformation { 
+  display: flex;
+  height : 30px;
+  margin: 0px 20px;
+  font-weight: bolder;
+  color: white;
+}
+
+#movieComment {
+  display: flex;
+  height:30px;
+  margin: 0px 20px;
+  font-weight: bolder;
+  color: white;
+
+}
+
+.selectedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectorBox{
+  height: 8px;
+  width: 130px;
+  margin : 15px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+}
+
+.detailed-container {
+  padding : 0px 60px 20px 60px;
+  color: white;
+  background-color: transparent;}
+
+.movieTitle {
+  font-size: 50px;
+  padding : 20px;
+}
+
+.movieTagLine{
+  font-size: 30px;
+  padding : 20px;
+}
+
+.movieOverView{
+  font-size: 30px;
+  padding : 20px;
+}
+
+.movieMadeCompany {
+  font-size: 25px;
+  padding : 20px;
+  margin : 10px 0px 0px 0px;
+}
+
+/* 이혜진/detailcontext 끝*/
+
 .movie-detail-on-image {
   height: 700px; /* 임시값 */
   background-color: rgb(73, 73, 73);
