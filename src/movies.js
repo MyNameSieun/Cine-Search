@@ -6,7 +6,7 @@ function showMovies() {
     .then((response) => response.json())
     .then((data) => {
       const movies = data.results; //  API로부터 받아온 데이터를 movies 변수에 저장
-      displayMovies(movies);
+      displayMovies(movies); // -> 배열
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
