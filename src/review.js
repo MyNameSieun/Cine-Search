@@ -80,7 +80,7 @@ const countReview = () => {
   // const length = data[movieId] !== null ? data[movieId].length : 0; //data null 이 아니면 리뷰 수 구하기
   $reviewCnt.innerHTML = length;
 }
-// countReview();
+countReview();
 
 //작성폼 클릭 시 버튼 영역 활성화
 $reviewTextarea.addEventListener('click', () => {
@@ -120,7 +120,7 @@ $btnSend.addEventListener('click', () => {
 
   saveReview(writer, password, comment);
   alert('리뷰 등록이 완료되었습니다.');
-  // countReview();
+  countReview();
   resetForm();
 });
 
