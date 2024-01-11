@@ -24,18 +24,17 @@
         </div>
       </nav>
 
-      <!-- movie image_이혜진 -->
-      <figure class="image-container">
-        <!-- <div class="movie-info">
-          <img src="https://image.tmdb.org/t/p/w500${movie.backdrop_path}" alt="${movie.title} 포스터" />
-          <div class="top-info">
-            <p class="star">⭐${movie.vote_average.toFixed(2)}</p>
-            <p class="release-date">${movie.release_date}</p>
-            <p class="runtime">${movie.runtime}분</p>
-            <p class="genres">SF</p>
-          </div>
-          <div class="bottom-info">
-            <p class="tagline">${movie.tagline}</p>
+      <!-- movie image_서지원 -->
+      <figure class="image-container" id="imageContainer">
+        <!-- <div class="movie-detail-on-image">
+          <div class="movie-info">
+            <div class="top-info">
+              <p class="star">⭐${movie.vote_average.toFixed(2)}</p>
+              <p class="release-date">${movie.release_date}</p>
+              <p class="runtime">${movie.runtime}분</p>
+              <p class="genres">SF</p>
+            </div>
+
             <p class="overview">${movie.overview}</p>
             <p class="title">${movie.title}</p>
           </div>
@@ -52,18 +51,23 @@
       <section class="review-container">
         <!-- 강지수 -->
         <article class="comment">
-          <div class="review-top-info">
-            댓글 <span id="review-cnt">1</span>개
-          </div>
+          <div class="review-top-info">댓글 <span id="review-cnt">1</span>개</div>
           <form id="reviewForm" class="review-form">
             <div class="user-info-area">
-              <input type="text" class="review-input" placeholder="닉네임">
-              <input type="password" class="review-input" placeholder="비밀번호">
+              <input type="text" class="review-input" placeholder="닉네임" />
+              <input type="password" class="review-input" placeholder="비밀번호" />
             </div>
             <div class="review-cont-area">
               <div class="thumb-box"></div>
               <div class="user-comment-box">
-                <textarea name="" id="" class="review-textarea" cols="30" rows="1" placeholder="리뷰를 입력해주세요."></textarea>
+                <textarea
+                  name=""
+                  id=""
+                  class="review-textarea"
+                  cols="30"
+                  rows="1"
+                  placeholder="리뷰를 입력해주세요."
+                ></textarea>
                 <div class="review-btn-box">
                   <button type="button" class="btn-cancel">취소</button>
                   <button type="submit" class="btn-send">등록</button>
@@ -84,6 +88,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="./src/review.js"></script><!--임시로 추가-->
+    <script src="./src/review.js"></script>
+    <!--임시로 추가-->
   </body>
 </html>

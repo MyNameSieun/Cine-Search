@@ -19,21 +19,20 @@ function showMovies() {
 function generateMoviesInfo(movie) {
   const html = `
         <img src="https://image.tmdb.org/t/p/original/${movie.backdrop_path}" alt="${movie.title} 포스터" />
-        <div class="top-info">
-          <p class="star">⭐${movie.vote_average.toFixed(2)}</p>
-          <p class="release-date">${movie.release_date}</p>
-          <p class="runtime">${movie.runtime}분</p>
-          <p class="genres">${movie.genres[name]}</p>
-        </div>
-        <div class="bottom-info">
-          <p class="tagline">${movie.tagline}</p>
+        <div class="movie-info">
+          <div class="top-info">
+            <p class="star">⭐ ${movie.vote_average.toFixed(2)}</p>
+            <p class="release-date">${movie.release_date}</p>
+            <p class="runtime">${movie.runtime}분</p>
+            <p class="genres">SF</p>
+          </div>
           <p class="overview">${movie.overview}</p>
           <p class="title">${movie.title}</p>
         </div>
         `;
 
   const movie_info = document.createElement("div");
-  movie_info.classList.add("movie-info");
+  movie_info.classList.add("movie-detail-on-image");
   movie_info.innerHTML = html;
 
   return movie_info;
