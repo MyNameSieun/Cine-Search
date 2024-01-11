@@ -1,16 +1,20 @@
 function showMovies() {
   const api_key = "13b14dad7e58423573b90a27c47ebfbf";
-  const id = "848326";
-  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${api_key}&language=ko-KR`;
+  const urlSearch = new URLSearchParams(location.search);
+  const movieId = urlSearch.get("id");
+
+  if (!movieId) {
+    console.error("영화 ID를 찾을 수 없습니다.");
+    return;
+  }
+
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&language=ko-KR`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       const movie = data;
-      console.log(movie);
-      displayMoviesInfo([movie]); // 왜? -> 객체라
-      // const movies = data.results; //  API로부터 받아온 데이터를 movies 변수에 저장
-      // displayMoviesInfo(movies);
+      displayMoviesInfo([movie]); // -> 객체(유사배열객체인가?)
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
