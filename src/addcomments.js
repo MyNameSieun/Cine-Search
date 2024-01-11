@@ -2,13 +2,13 @@ import { loadData } from "./review.js";
 
 const $commentList = document.getElementById('commentList');
 
-const movieId = 848326; //848326 임시 데이터, 이후에 영화 아이디 가져와서 넣어야함.
+const urlSearch = new URLSearchParams(location.search);
+const movieId = urlSearch.get("id");
+
 const reviewData = JSON.parse(loadData()); //로컬 스토리지 값 받아오기
+console.log(reviewData); 
 
 const reviewDataArr = reviewData[movieId];
-console.log(reviewDataArr); 
-
-export const addReviews = () => {
     reviewDataArr.forEach(reviewData => {
         console.log(reviewData)
         const writer = reviewData.writer;
@@ -29,8 +29,8 @@ export const addReviews = () => {
     
         $commentList.innerHTML += addHTML;
     });
-}
 
-addReviews();
+
+
 
   
