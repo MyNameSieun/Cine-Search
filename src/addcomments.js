@@ -1,23 +1,31 @@
-// 1. 일단 데이터를 불러와.
-// 2. 불러온 데이터에는 review라는 객체 안에는 이렇게.
-//  {writer: "지원", password: "123", contents: "영화굿", id: 0}
-// 3. 저장한 내용으로 foreach 돌면서 각 정보에 접근해서 html그려.
+const $commentList = document.getElementById('commentList');
 
 import { loadData } from "./review.js";
 
-const jsonReviewData = loadData(); //로컬 스토리지 값 받아오기
-console.log(jsonReviewData); //{"848326":[{"writer":"지원3","password":"1234","contents":"안녕","id":2}]}
+const movieId = 848326; //848326 임시 데이터, 이후에 영화 아이디 가져와서 넣어야함.
+const reviewData = JSON.parse(loadData()); //로컬 스토리지 값 받아오기
 
-const reviewKeyData = JSON.parse(jsonReviewData); //json문자열을 객체로 파싱
-// console.log(reviewKeyData) //{848326: Array(1)}
-// console.log(reviewKeyData['848326'][0]); //848326은 추후에 아이디값으로
- const a = reviewKeyData[0];
+const reviewDataArr = reviewData[movieId];
+console.log(reviewDataArr); 
 
- console.log(jsonReviewData.length)
+reviewDataArr.forEach(reviewData => {
+    console.log(reviewData)
+    const writer = reviewData.writer;
+    const password = reviewData.password;
+    const contents = reviewData.contents;
 
- for (let i = 0; i<jsonReviewData.length; i++){
+    const addHTML = 
+    `<div class="comment-wrap-box">
+    <div class="thumb-name-comment">
+      <div class="thumb-box-in-list"></div>
+      <div class="comment-contents">
+        <span class="writer-name">${writer}</span>
+        <p class="writed-comment">${contents}</p>
+      </div>
+    </div>
+    <span class="material-symbols-outlined">more_vert</span>
+    </div>`;
 
- }
-
-
+    $commentList.innerHTML += addHTML;
+});
   
