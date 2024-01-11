@@ -171,6 +171,10 @@
   justify-content: space-between;
 }
 
+.no-reviews {
+  margin: 30px auto 0 auto;
+}
+
 .thumb-box-in-list {
   width: 45px;
   height: 45px;

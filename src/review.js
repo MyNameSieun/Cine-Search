@@ -1,4 +1,5 @@
-const movieId = 848326; //848326 임시 데이터, 이후에 영화 아이디 가져와서 넣어야함.
+const urlSearch = new URLSearchParams(location.search);
+const movieId = urlSearch.get("id");
 const $reviewTextarea = document.querySelector('.review-textarea');
 const $reviewBtnBox = document.querySelector('.review-btn-box');
 const $btnCancel = document.querySelector('.btn-cancel');
@@ -31,9 +32,12 @@ const saveReview = (name, password, contents) => {
   //이전에 등록한 리뷰 있으면 불러와서 데이터 넣기
   if(prevData){
     sendData = prevData;
-  }
-  if(prevData[movieId]){
-    reviewPushData = prevData[movieId];
+    if(prevData[movieId]){
+      //해당 영화에 리뷰가 여러개 일 경우 리뷰 배열에서 마지막 리뷰의 id 값 + 1
+      let idx = prevData[movieId].at(-1).id;
+      id = idx + 1;
+      reviewPushData = prevData[movieId];
+    }
   }
   
   const dataObj = {
@@ -57,7 +61,7 @@ const countReview = () => {
   const $reviewCnt = document.querySelector('.review-cnt');
   const data = JSON.parse(loadData());
   let length = 0;
-  if(data[movieId]){
+  if(data && data[movieId]){
     length = data[movieId].length;
   }
   $reviewCnt.innerHTML = length;
@@ -66,6 +70,10 @@ countReview();
 
 //작성폼 클릭 시 버튼 영역 활성화
 $reviewTextarea.addEventListener('click', () => {
+  $reviewBtnBox.style.display = 'flex';
+});
+
+$reviewTextarea.addEventListener('keyup', () => {
   $reviewBtnBox.style.display = 'flex';
 });
 
