@@ -155,3 +155,15 @@
   background-color: #dbdbdb;
   color: #262626;
 }
+
+.comment-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-wrap-box {
+  background-color: #0060bf;
+  height: 80px;
+  width: 100%;
+}
