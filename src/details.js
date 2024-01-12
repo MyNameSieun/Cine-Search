@@ -14,7 +14,7 @@ function showMovies() {
     .then((response) => response.json())
     .then((data) => {
       const movie = data;
-      displayMoviesInfo([movie]); // -> 객체(유사배열객체인가?)
+      displayMoviesInfo([movie]); // -> 객체(유사배열객체인가?)s
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);

@@ -1,40 +1,47 @@
+function showMovies() {
+  const api_key = "13b14dad7e58423573b90a27c47ebfbf";
+  const urlSearch = new URLSearchParams(location.search);
+  const movieId = urlSearch.get("id");
 
-const options = {
-  method: 'GET',
-  headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwMmZmYWFjOWE4NmE4OTk4ZDQ3MGJhZjAyYzk3NDc2YiIsInN1YiI6IjY1OWE1NTc3ODc0MWM0MDFmZTZlNGJiNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eiraCaCkjB-fQf9bKnbC3Fc5enxSPa6T44qx_J4Jmww'
+  if (!movieId) {
+    console.error("영화 ID를 찾을 수 없습니다.");
+    return;
   }
-};
 
-let url = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
-fetch(url, options).then(response => response.json()).then(function (data) {
-   const movies=data.results;
-   console.log(movies[0])
-   return movieProperty(movies[0])});
-//연결되면 삭제될 부분. 시험용으로 들어갔습니다.
+  const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&language=ko-KR`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const movie = {data};
+      console.log(movie)
+      movieProperty(movie.data);
+    })
+    .catch((error) => {
+      console.error("데이터를 가져오는 중 오류 발생:", error);
+    });
+}
 
 const detailtitle = document.querySelector("#movieDetailInformation");
 const commenttitle = document.querySelector("#movieComment");
 const detailcontainer = document.querySelector(".detailed-container");
 const commentbox = document.querySelector(".review-container");
 
-
 const box1up = document.querySelector("#detailSelectorBox");
 const box2up = document.querySelector("#commentSelectorBox");
 
-
-const movieProperty = (selectedMovie) => {
-  const {title, tagline, overview, constructor_company} = selectedMovie;
-  document.querySelector(".movieTitle").textContent=title;
+const movieProperty = (movie) => {
+  const {title, tagline, overview, production_companies} = movie;
+  console.log(movie);
+  document.querySelector(".movieTitle").textContent=`${title}`;
   document.querySelector(".movieTagLine").textContent=tagline;
   document.querySelector(".movieOverView").textContent=overview;
-  if (selectedMovie.hasOwnProperty("constructor_company")===true) {
-    if (constructor_company.length===1){
-    document.querySelector(".movieMadeCompany").textContent=constructor_company[0];}
+  if (movie.hasOwnProperty("production_companies")>0 ===true) {
+    if (production_companies.length===1){
+    document.querySelector(".movieMadeCompany").textContent=production_companies[0].name;}
     else {
-      const otherCompany = constructor_company.length-1
-      document.querySelector(".movieMadeCompany").textContent=`${constructor_company[0]} 외 ${otherCompany}`;}}}
+      const otherCompany = production_companies.length-1
+      document.querySelector(".movieMadeCompany").textContent=`${production_companies[0].name} 외 ${otherCompany}`;}}}
 //상세내용 넣기
 
 detailtitle.addEventListener('click', (event) => {
@@ -55,3 +62,4 @@ commenttitle.addEventListener('click', (event) => {
   box2up.style.visibility = "unset";
 });
 
+showMovies();
