@@ -15,11 +15,17 @@ if (reviewData && reviewData[movieId]) {
 }
 console.log(reviewDataArr, "reviewDataArr");
 
+
 const addComments = () => {
   reviewDataArr.forEach((reviewData) => {
     const writer = reviewData.writer;
     const password = reviewData.password;
-    const contents = reviewData.contents;
+    let contents = reviewData.contents;
+
+    console.log(contents);
+    if (contents.includes('\n')){
+      contents = contents.replace(/\n/g, "<br>");
+    }
 
     const addHTML = `<div class="comment-wrap-box">
     <div class="thumb-name-comment">
@@ -33,7 +39,12 @@ const addComments = () => {
     </div>`;
 
     $commentList.innerHTML += addHTML;
+
+    
   });
+
+  
+
 
   if (reviewDataArr.length === 0) {
     const noReviewsHTML = `
