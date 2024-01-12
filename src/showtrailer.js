@@ -1,9 +1,4 @@
 /* 예고편 유튜브에서 가져오기 */
-
-// 1. HTML 섹션을 추가해야겠지?
-// 2. movie 아이디값 가져오기
-// 3. 유튜브 iframe 태그 에 movie id값 넣고 출력
-
 const api_key = "13b14dad7e58423573b90a27c47ebfbf";
 const urlSearch = new URLSearchParams(location.search);
 const movieId = urlSearch.get("id");
