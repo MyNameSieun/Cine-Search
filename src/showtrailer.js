@@ -15,7 +15,8 @@ const loadMovieVideoData = async (url) => {
       return data.results;
     }
   } catch (error) {
-    throw new HttpError(response);
+    console.log("일시적인 오류가 발생하였습니다.");
+    throw error;
   }
 };
 
