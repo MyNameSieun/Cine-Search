@@ -49,10 +49,7 @@ const saveReview = (name, password, contents) => {
 
   reviewPushData.push(dataObj);
   sendData[movieId] = reviewPushData;
-  console.log(sendData);
-
   localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
-  
   id += 1;
 }
 
@@ -78,7 +75,6 @@ $reviewTextarea.addEventListener('keyup', (event) => {
   let rowCnt = text.split(/\r\n|\r|\n/).length;
   $reviewBtnBox.style.display = 'flex';
   if(event.key === 'Enter'){
-    console.log('엔터입니당');
     $reviewTextarea.setAttribute('rows', rowCnt);
   }else if(event.key === 'Backspace'){
     if(rowCnt >= 1){
