@@ -55,12 +55,17 @@
       <section class="tap-container">
         <div class="selectedContainer">
           <div id="movieDetailInformation">상세정보</div>
-          <div class="selectorBox box1" id="detailSelectorBox"></div>
+          <div class="selectorBox" id="detailSelectorBox" style="visibility: unset"></div>
         </div>
 
         <div class="selectedContainer">
           <div id="movieComment">영화리뷰</div>
-          <div class="selectorBox box2" id="commentSelectorBox" style="display: none"></div>
+          <div class="selectorBox" id="commentSelectorBox" style="visibility: hidden"></div>
+        </div>
+
+        <div class="selectedContainer">
+          <div id="trailer">예고편</div>
+          <div class="selectorBox" id="trailerSelectorBox" style="visibility: hidden"></div>
         </div>
       </section>
 
@@ -73,7 +78,7 @@
       </section>
 
       <!-- movie review -->
-      <section class="review-container">
+      <section class="review-container" style="display: none">
         <!-- 강지수 -->
         <article class="comment">
           <div class="review-top-info">댓글 <span class="review-cnt">0</span>개</div>
@@ -110,7 +115,7 @@
       </section>
 
       <!-- Trailer 서지원 -->
-      <section class="trailer-container">
+      <section class="trailer-container" style="display: none">
         <!-- <div class="dff"></div> -->
         <!-- <iframe
           src="https://www.youtube.com/embed/rc8vLvZ0fTE?si=rdV_GshvrrsX1JaY"
