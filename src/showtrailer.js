@@ -7,7 +7,6 @@ const $trailerContainer = document.querySelector(".trailer-container");
 const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${api_key}`;
 
 const loadMovieVideoData = async (url) => {
-  //영화 예고편, 티저, bts 등등.. 영상 데이터들 모음
   try {
     const response = await fetch(url);
     if (response.status === 200) {
@@ -22,8 +21,8 @@ const loadMovieVideoData = async (url) => {
 const renderTrailer = async () => {
   const movieVideoData = await loadMovieVideoData(url);
   console.log(movieVideoData);
-  const onlyTrailers = movieVideoData.filter((videos) => videos.type === "Trailer"); //type: "Trailer" 부분만 가져오기
-  const trailerKey = onlyTrailers[0].key; // 유튜브 링크에 연걸할 키
+  const onlyTrailers = movieVideoData.filter((videos) => videos.type === "Trailer"); //type "Trailer" 부분만 가져오기
+  const trailerKey = onlyTrailers[0].key;
   //   console.log(trailerKey);
   $trailerContainer.innerHTML = `<iframe
   src="https://www.youtube.com/embed/${trailerKey}"
