@@ -15,16 +15,16 @@ if (reviewData && reviewData[movieId]) {
 }
 console.log(reviewDataArr, "reviewDataArr");
 
-
 const addComments = () => {
   reviewDataArr.forEach((reviewData) => {
     const writer = reviewData.writer;
     const password = reviewData.password;
     let contents = reviewData.contents;
 
+    //사용자가 엔터로 줄바꿈하였을 시 댓글에도 줄바꾸어 출력
     console.log(contents);
-    if (contents.includes('\n')){
-      contents = contents.replace(/\n/g, "<br>");
+    if (contents.includes("\n")) {
+      contents = contents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
     }
 
     const addHTML = `<div class="comment-wrap-box">
@@ -39,12 +39,7 @@ const addComments = () => {
     </div>`;
 
     $commentList.innerHTML += addHTML;
-
-    
   });
-
-  
-
 
   if (reviewDataArr.length === 0) {
     const noReviewsHTML = `
