@@ -73,8 +73,18 @@ $reviewTextarea.addEventListener('click', () => {
   $reviewBtnBox.style.display = 'flex';
 });
 
-$reviewTextarea.addEventListener('keyup', () => {
+$reviewTextarea.addEventListener('keyup', (event) => {
+  let text = $reviewTextarea.value;
+  let rowCnt = text.split(/\r\n|\r|\n/).length;
   $reviewBtnBox.style.display = 'flex';
+  if(event.key === 'Enter'){
+    console.log('엔터입니당');
+    $reviewTextarea.setAttribute('rows', rowCnt);
+  }else if(event.key === 'Backspace'){
+    if(rowCnt >= 1){
+      $reviewTextarea.setAttribute('rows', rowCnt);
+    }
+  }
 });
 
 //취소 버튼 클릭시 버튼 영역 비활성화
