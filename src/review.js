@@ -122,6 +122,7 @@ $btnSend.addEventListener('click', () => {
   alert('리뷰 등록이 완료되었습니다.');
   countReview();
   resetForm();
+  location.reload();
 });
 
 //작성폼에 입력 시 등록 버튼 활성화
