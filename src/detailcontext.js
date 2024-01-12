@@ -20,8 +20,8 @@ const detailcontainer = document.querySelector(".detailed-container");
 const commentbox = document.querySelector(".review-container");
 
 
-const box1up = document.querySelector(".box1");
-const box2up = document.querySelector(".box2");
+const box1up = document.querySelector("#detailSelectorBox");
+const box2up = document.querySelector("#commentSelectorBox");
 
 
 const movieProperty = (selectedMovie) => {
