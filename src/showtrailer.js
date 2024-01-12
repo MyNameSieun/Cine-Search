@@ -30,20 +30,7 @@ const renderTrailer = async () => {
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
   allowfullscreen
-></iframe>;`;
+    ></iframe>;`;
 };
 
 renderTrailer();
-
-console.log($trailerContainer);
-
-// fetch(url)
-//   .then((response) => response.json())
-//   .then((data) => {
-//     const trailerKey = data.results[0].key;
-//     console.log(trailerKey, "예고편 유튜브 키");
-//     return trailerKey; //  API로부터 받아온 데이터를 movies 변수에 저장 // -> 배열
-//   })
-//   .catch((error) => {
-//     console.error("데이터를 가져오는 중 오류 발생:", error);
-//   });
