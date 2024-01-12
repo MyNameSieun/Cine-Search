@@ -1,11 +1,12 @@
-const url = "https://api.themoviedb.org/3/movie/popular?api_key=13b14dad7e58423573b90a27c47ebfbf&language=ko-KR";
-
 function showMovies() {
+  const api_key = "13b14dad7e58423573b90a27c47ebfbf";
+  const url = `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=ko-KR`;
+
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       const movies = data.results; //  API로부터 받아온 데이터를 movies 변수에 저장
-      displayMovies(movies);
+      displayMovies(movies); // -> 배열
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
@@ -36,12 +37,11 @@ function generateCardHtml(movie) {
        ${overview}
      </p>
      <hr class="hr-bottom" />
-
-     <a class="btn btn-primary" href="details.html">상세 정보</a>
+     <a class="btn btn-primary" href="details.html?id=${movie.id}">상세 정보</a>
    </div>
  </div>
  `;
-
+  // href="details.html"
   // 새로운 <div> 요소를 생성
   const el = document.createElement("div");
   // 생성한 <div> 요소에 "card-container" 클래스를 추가
