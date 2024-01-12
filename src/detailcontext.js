@@ -17,11 +17,11 @@ fetch(url, options).then(response => response.json()).then(function (data) {
 const detailtitle = document.querySelector("#movieDetailInformation");
 const commenttitle = document.querySelector("#movieComment");
 const detailcontainer = document.querySelector(".detailed-container");
-const totalComment = document.querySelector(".review-container");
+const commentbox = document.querySelector(".review-container");
 
 
-const upbox1 = document.querySelector("#detailSelectorBox");
-const upbox2 = document.querySelector("#commentSelectorBox");
+const box1up = document.querySelector("#detailSelectorBox");
+const box2up = document.querySelector("#commentSelectorBox");
 
 const movieProperty = (selectedMovie) => {
   const {title, tagline, overview, constructor_company} = selectedMovie;
@@ -37,18 +37,21 @@ const movieProperty = (selectedMovie) => {
 //상세내용 넣기
 
 detailtitle.addEventListener('click', (event) => {
-  detailcontainer.style.display = "block";
-  totalComment.style.display = "none";
 
-  upbox1.style.visibility = "unset";
-  upbox2.style.visibility = "hidden";
+  event.preventDefault();
+  detailcontainer.style.display = "block";
+  commentbox.style.display = "none";
+
+  box1up.style.visibility = "unset";
+  box2up.style.visibility = "hidden";
 });
 
 commenttitle.addEventListener('click', (event) => {
+  event.preventDefault();
+  commentbox.style.display = "block";
   detailcontainer.style.display = "none";
-  totalComment.style.display = "block";
 
-  upbox1.style.visibility = "hidden";
-  upbox2.style.visibility = "unset";
+  box1up.style.visibility = "hidden";
+  box2up.style.visibility = "unset";
 });
 
