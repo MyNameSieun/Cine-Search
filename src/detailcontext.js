@@ -68,7 +68,6 @@ commenttitle.addEventListener("click", (event) => {
 });
 
 trailer.addEventListener("click", (event) => {
-  console.log("trailerclicked");
   event.preventDefault();
   $trailerBox.style.display = "flex";
   detailcontainer.style.display = "none";
