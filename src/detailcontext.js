@@ -19,8 +19,9 @@ const commenttitle = document.querySelector("#movieComment");
 const detailcontainer = document.querySelector(".detailed-container");
 const totalComment = document.querySelector(".review-container");
 
-const upbox1 = document.querySelector(".box1");
-const upbox2 = document.querySelector(".box2");
+
+const upbox1 = document.querySelector("#detailSelectorBox");
+const upbox2 = document.querySelector("#commentSelectorBox");
 
 const movieProperty = (selectedMovie) => {
   const {title, tagline, overview, constructor_company} = selectedMovie;
@@ -44,7 +45,6 @@ detailtitle.addEventListener('click', (event) => {
 });
 
 commenttitle.addEventListener('click', (event) => {
-  document.querySelector(".comment").style.display = "none"
   detailcontainer.style.display = "none";
   totalComment.style.display = "block";
 
