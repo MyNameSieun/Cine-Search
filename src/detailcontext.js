@@ -24,6 +24,8 @@ function showMovies() {
 
 const detailtitle = document.querySelector("#movieDetailInformation");
 const commenttitle = document.querySelector("#movieComment");
+const trailer = document.querySelector("#trailer"); //예고편 탭
+
 const detailcontainer = document.querySelector(".detailed-container");
 const commentbox = document.querySelector(".review-container");
 
@@ -43,22 +45,38 @@ const movieProperty = (movie) => {
       document.querySelector(".movieMadeCompany").textContent=`${production_companies[0].name} 외 ${otherCompany} 제작`;}}}
 //상세내용 넣기
 
-detailtitle.addEventListener('click', (event) => {
+detailtitle.addEventListener("click", (event) => {
   event.preventDefault();
   detailcontainer.style.display = "block";
   commentbox.style.display = "none";
+  $trailerBox.style.display = "none";
 
   box1up.style.visibility = "unset";
   box2up.style.visibility = "hidden";
+  $box3up.style.visibility = "hidden";
 });
 
-commenttitle.addEventListener('click', (event) => {
+commenttitle.addEventListener("click", (event) => {
   event.preventDefault();
   commentbox.style.display = "block";
   detailcontainer.style.display = "none";
+  $trailerBox.style.display = "none";
 
   box1up.style.visibility = "hidden";
   box2up.style.visibility = "unset";
+  $box3up.style.visibility = "hidden";
 });
 
 showMovies()
+
+trailer.addEventListener("click", (event) => {
+  console.log("trailerclicked");
+  event.preventDefault();
+  $trailerBox.style.display = "flex";
+  detailcontainer.style.display = "none";
+  commentbox.style.display = "none";
+
+  box1up.style.visibility = "hidden";
+  box2up.style.visibility = "hidden";
+  $box3up.style.visibility = "unset";
+});

@@ -51,7 +51,7 @@
 /* /* <!-- tap meun_이혜진 --> */
 
 .tap-container {
-  height: 100px;  
+  height: 100px;
   margin: 50px auto 10px auto;
   padding: 10px 60px 10px 60px;
   display: flex;
@@ -62,21 +62,21 @@
   background-color: transparent;
 }
 
-#movieDetailInformation { 
+#movieDetailInformation {
   display: flex;
-  height : 30px;
+  height: 30px;
   margin: 0px 20px;
   font-weight: bolder;
   color: white;
 }
 
-#movieComment {
+#movieComment,
+#trailer {
   display: flex;
-  height:30px;
+  height: 30px;
   margin: 0px 20px;
   font-weight: bolder;
   color: white;
-
 }
 
 .selectedContainer {
@@ -86,10 +86,10 @@
   justify-content: center;
 }
 
-.selectorBox{
+.selectorBox {
   height: 8px;
   width: 130px;
-  margin : 15px 0px 10px 0px;
+  margin: 15px 0px 10px 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -98,32 +98,38 @@
 }
 
 .detailed-container {
-  padding : 0px 60px 20px 60px;
+  padding: 0px 60px 20px 60px;
   color: white;
-  background-color: transparent;}
+  background-color: transparent;
+}
 
 .movieTitle {
   font-size: 50px;
-  padding : 20px;
+  padding: 20px;
 }
 
-.movieTagLine{
+.movieTagLine {
   font-size: 30px;
-  padding : 20px;
+  padding: 20px;
 }
 
-.movieOverView{
+.movieOverView {
   font-size: 30px;
-  padding : 20px;
+  padding: 20px;
 }
 
 .movieMadeCompany {
   font-size: 25px;
-  padding : 20px;
-  margin : 10px 0px 0px 0px;
+  padding: 20px;
+  margin: 10px 0px 0px 0px;
 }
 
 /* review-container */
+.review-container {
+  width: 85%;
+  margin: 0 auto 0 auto;
+}
+
 .review-top-info {
   margin: 20px 0;
   color: #fff;
@@ -167,8 +173,9 @@
 }
 .review-textarea {
   padding: 2px 5px;
+  display: block;
   width: 100%;
-  height: 25px;
+  min-height: 25px;
   resize: none;
   background-color: transparent;
   border-width: 0 0 1px 0;
@@ -282,4 +289,17 @@
 .thumb-name-comment {
   display: flex;
   justify-self: flex-start;
+}
+
+.trailer-container {
+  margin: 50px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trailer-container iframe {
+  border-radius: 10px;
+  width: 1100px;
+  height: 618.75px;
 }
