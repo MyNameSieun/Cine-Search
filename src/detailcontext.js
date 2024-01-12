@@ -13,9 +13,9 @@ function showMovies() {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const movie = {data};
+      const movie = data;
       console.log(movie)
-      movieProperty(movie.data);
+      movieProperty(movie); 
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
@@ -32,16 +32,15 @@ const box2up = document.querySelector("#commentSelectorBox");
 
 const movieProperty = (movie) => {
   const {title, tagline, overview, production_companies} = movie;
-  console.log(movie);
-  document.querySelector(".movieTitle").textContent=`${title}`;
+  document.querySelector(".movieTitle").textContent=title;
   document.querySelector(".movieTagLine").textContent=tagline;
   document.querySelector(".movieOverView").textContent=overview;
-  if (movie.hasOwnProperty("production_companies")>0 ===true) {
-    if (production_companies.length===1){
+  if (movie.hasOwnProperty("production_companies")>0 === true) {
+    if (production_companies.length === 1){
     document.querySelector(".movieMadeCompany").textContent=production_companies[0].name;}
     else {
       const otherCompany = production_companies.length-1
-      document.querySelector(".movieMadeCompany").textContent=`${production_companies[0].name} 외 ${otherCompany}`;}}}
+      document.querySelector(".movieMadeCompany").textContent=`${production_companies[0].name} 외 ${otherCompany} 제작`;}}}
 //상세내용 넣기
 
 detailtitle.addEventListener('click', (event) => {
@@ -51,7 +50,7 @@ detailtitle.addEventListener('click', (event) => {
 
   box1up.style.visibility = "unset";
   box2up.style.visibility = "hidden";
-}); //없거나 보이지 않은 경우 보이게 한다.
+});
 
 commenttitle.addEventListener('click', (event) => {
   event.preventDefault();
@@ -62,4 +61,4 @@ commenttitle.addEventListener('click', (event) => {
   box2up.style.visibility = "unset";
 });
 
-showMovies();
+showMovies()
