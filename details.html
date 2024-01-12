@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/base.css" />
     <link rel="stylesheet" href="./style/details.css" />
+    
+    <script type="module" src="./src/detailcontext.js"></script>
     <script type="module" src="./src/details.js"></script>
     <script type="module" src="./src/review.js"></script>
     <script type="module" src="./src/addcomments.js"></script>
@@ -50,8 +52,24 @@
 
       <!-- tap meun_이혜진 -->
       <section class="tap-container">
-        <div>상세정보</div>
-        <div>영화리뷰</div>
+        <div class=selectedContainer>
+        <div id = "movieDetailInformation">상세정보</div>
+        <div class="selectorBox box1" id="detailSelectorBox"></div>
+        </div>
+
+        <div class=selectedContainer>
+        <div id = "movieComment">영화리뷰</div>
+        <div class="selectorBox box2" id="commentSelectorBox" style="display:none;" ></div>
+       </div>
+      </section>
+
+      <!-- details info_이혜진 -->
+      <section class="detailed-container" style="display:block;">
+        <div class = "movieTitle"></div> 
+        <div class = "movieTagLine"></div>
+        <div class = "movieOverView">
+        </div>
+        <div class="movieMadeCompany"></div>
       </section>
 
       <!-- movie review -->
