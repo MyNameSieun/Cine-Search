@@ -24,13 +24,15 @@ function showMovies() {
 
 const detailtitle = document.querySelector("#movieDetailInformation");
 const commenttitle = document.querySelector("#movieComment");
-const trailer = document.querySelector("#trailer"); //예고편 탭
+const $trailer = document.querySelector("#trailer"); //예고편 탭
 
 const detailcontainer = document.querySelector(".detailed-container");
 const commentbox = document.querySelector(".review-container");
+const trailerBox = document.querySelector(".trailer-container");
 
 const box1up = document.querySelector("#detailSelectorBox");
 const box2up = document.querySelector("#commentSelectorBox");
+const box3up = document.querySelector("#trailerSelectorBox");
 
 const movieProperty = (movie) => {
   const {title, tagline, overview, production_companies} = movie;
@@ -49,22 +51,22 @@ detailtitle.addEventListener("click", (event) => {
   event.preventDefault();
   detailcontainer.style.display = "block";
   commentbox.style.display = "none";
-  $trailerBox.style.display = "none";
+  trailerBox.style.display = "none";
 
   box1up.style.visibility = "unset";
   box2up.style.visibility = "hidden";
-  $box3up.style.visibility = "hidden";
+  box3up.style.visibility = "hidden";
 });
 
 commenttitle.addEventListener("click", (event) => {
   event.preventDefault();
   commentbox.style.display = "block";
   detailcontainer.style.display = "none";
-  $trailerBox.style.display = "none";
+  trailerBox.style.display = "none";
 
   box1up.style.visibility = "hidden";
   box2up.style.visibility = "unset";
-  $box3up.style.visibility = "hidden";
+  box3up.style.visibility = "hidden";
 });
 
 showMovies()
@@ -72,11 +74,11 @@ showMovies()
 trailer.addEventListener("click", (event) => {
   console.log("trailerclicked");
   event.preventDefault();
-  $trailerBox.style.display = "flex";
+  trailerBox.style.display = "block";
   detailcontainer.style.display = "none";
   commentbox.style.display = "none";
 
   box1up.style.visibility = "hidden";
   box2up.style.visibility = "hidden";
-  $box3up.style.visibility = "unset";
+  box3up.style.visibility = "unset";
 });
