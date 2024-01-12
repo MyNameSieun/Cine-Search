@@ -124,6 +124,11 @@
 }
 
 /* review-container */
+.review-container{
+  width: 85%;
+  margin: 0 auto 0 auto;
+}
+
 .review-top-info {
   margin: 20px 0;
   color: #fff;
