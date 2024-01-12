@@ -17,10 +17,11 @@ fetch(url, options).then(response => response.json()).then(function (data) {
 const detailtitle = document.querySelector("#movieDetailInformation");
 const commenttitle = document.querySelector("#movieComment");
 const detailcontainer = document.querySelector(".detailed-container");
+const commentbox = document.querySelector(".review-container");
 
-const box1up = document.querySelector(".box1");
-const box2up = document.querySelector(".box2");
 
+const box1up = document.querySelector("#detailSelectorBox");
+const box2up = document.querySelector("#commentSelectorBox");
 
 const movieProperty = (selectedMovie) => {
   const {title, tagline, overview, constructor_company} = selectedMovie;
@@ -36,18 +37,21 @@ const movieProperty = (selectedMovie) => {
 //상세내용 넣기
 
 detailtitle.addEventListener('click', (event) => {
+
   event.preventDefault();
   detailcontainer.style.display = "block";
+  commentbox.style.display = "none";
 
-  box1up.style.display = "block";
-  box2up.style.display = "none";
-}); //없거나 보이지 않은 경우 보이게 한다.
+  box1up.style.visibility = "unset";
+  box2up.style.visibility = "hidden";
+});
 
 commenttitle.addEventListener('click', (event) => {
   event.preventDefault();
+  commentbox.style.display = "block";
   detailcontainer.style.display = "none";
 
-  box1up.style.display = "none";
-  box2up.style.display = "block";
+  box1up.style.visibility = "hidden";
+  box2up.style.visibility = "unset";
 });
 
