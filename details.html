@@ -10,7 +10,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <!-- 아이콘 CDN --> 
+    <!-- 아이콘 CDN -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -18,11 +18,12 @@
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/base.css" />
     <link rel="stylesheet" href="./style/details.css" />
-    
+
     <script type="module" src="./src/detailcontext.js"></script>
     <script type="module" src="./src/details.js"></script>
     <script type="module" src="./src/review.js"></script>
     <script type="module" src="./src/addcomments.js"></script>
+    <script type="module" src="./src/showtrailer.js"></script>
   </head>
   <body>
     <main class="container">
@@ -52,23 +53,22 @@
 
       <!-- tap meun_이혜진 -->
       <section class="tap-container">
-        <div class=selectedContainer>
-        <div id = "movieDetailInformation">상세정보</div>
-        <div class="selectorBox box1" id="detailSelectorBox"></div>
+        <div class="selectedContainer">
+          <div id="movieDetailInformation">상세정보</div>
+          <div class="selectorBox box1" id="detailSelectorBox"></div>
         </div>
 
-        <div class=selectedContainer>
-        <div id = "movieComment">영화리뷰</div>
-        <div class="selectorBox box2" id="commentSelectorBox" style="display:none;" ></div>
-       </div>
+        <div class="selectedContainer">
+          <div id="movieComment">영화리뷰</div>
+          <div class="selectorBox box2" id="commentSelectorBox" style="display: none"></div>
+        </div>
       </section>
 
       <!-- details info_이혜진 -->
-      <section class="detailed-container" style="display:block;">
-        <div class = "movieTitle"></div> 
-        <div class = "movieTagLine"></div>
-        <div class = "movieOverView">
-        </div>
+      <section class="detailed-container" style="display: block">
+        <div class="movieTitle"></div>
+        <div class="movieTagLine"></div>
+        <div class="movieOverView"></div>
         <div class="movieMadeCompany"></div>
       </section>
 
@@ -106,10 +106,20 @@
             </div>
             <span class="material-symbols-outlined">more_vert</span>
           </div> -->
-          
         </article>
       </section>
-      
+
+      <!-- Trailer 서지원 -->
+      <section class="trailer-container">
+        <!-- <div class="dff"></div> -->
+        <!-- <iframe
+          src="https://www.youtube.com/embed/rc8vLvZ0fTE?si=rdV_GshvrrsX1JaY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe> -->
+      </section>
     </main>
 
     <!--footer-->
