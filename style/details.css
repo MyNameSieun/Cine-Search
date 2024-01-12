@@ -172,8 +172,9 @@
 }
 .review-textarea {
   padding: 2px 5px;
+  display: block;
   width: 100%;
-  height: 25px;
+  min-height: 25px;
   resize: none;
   background-color: transparent;
   border-width: 0 0 1px 0;
