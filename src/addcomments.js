@@ -21,6 +21,7 @@ const addComments = () => {
     const writer = reviewData.writer;
     const password = reviewData.password;
     let contents = reviewData.contents;
+    const id = reviewData.id;
 
     console.log(contents);
     if (contents.includes('\n')){
@@ -35,7 +36,11 @@ const addComments = () => {
         <p class="writed-comment">${contents}</p>
       </div>
     </div>
-    <span class="material-symbols-outlined">more_vert</span>
+    <div>
+      <!-- <span class="material-symbols-outlined">more_vert</span> -->
+      <button type="button" class="btn-review-remove"><i class="xi-trash-o"></i></button>
+      <input type="hidden" value="${id}" class="comment-id" />
+    </div>
     </div>`;
 
     $commentList.innerHTML += addHTML;
