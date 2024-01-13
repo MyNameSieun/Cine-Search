@@ -27,29 +27,12 @@ const trailer = document.querySelector("#trailer"); //예고편 탭
 
 const detailcontainer = document.querySelector(".detailed-container");
 const commentbox = document.querySelector(".review-container");
-<<<<<<< HEAD
-=======
 const $trailerBox = document.querySelector(".trailer-container"); //예고편 박스
->>>>>>> 4fc8f29ce413fed89618bade7b4daa8f13e57556
 
 const box1up = document.querySelector("#detailSelectorBox");
 const box2up = document.querySelector("#commentSelectorBox");
 const $box3up = document.querySelector("#trailerSelectorBox"); //밑에 빨간 박스
 
-<<<<<<< HEAD
-const movieProperty = (movie) => {
-  const {title, tagline, overview, production_companies} = movie;
-
-  document.querySelector(".movieTitle").textContent=title;
-  document.querySelector(".movieTagLine").textContent=tagline;
-  document.querySelector(".movieOverView").textContent=overview;
-  if (movie.hasOwnProperty("production_companies")>0 === true) {
-    if (production_companies.length === 1){
-    document.querySelector(".movieMadeCompany").textContent=production_companies[0].name;}
-    else {
-      const otherCompany = production_companies.length-1
-      document.querySelector(".movieMadeCompany").textContent=`${production_companies[0].name} 외 ${otherCompany} 제작`;}}}
-=======
 const movieProperty = (selectedMovie) => {
   const { title, tagline, overview, constructor_company } = selectedMovie;
   document.querySelector(".movieTitle").textContent = title;
@@ -64,7 +47,6 @@ const movieProperty = (selectedMovie) => {
     }
   }
 };
->>>>>>> 4fc8f29ce413fed89618bade7b4daa8f13e57556
 //상세내용 넣기
 
 detailtitle.addEventListener("click", (event) => {
@@ -89,9 +71,6 @@ commenttitle.addEventListener("click", (event) => {
   $box3up.style.visibility = "hidden";
 });
 
-<<<<<<< HEAD
-showMovies()
-=======
 trailer.addEventListener("click", (event) => {
   console.log("trailerclicked");
   event.preventDefault();
@@ -103,4 +82,3 @@ trailer.addEventListener("click", (event) => {
   box2up.style.visibility = "hidden";
   $box3up.style.visibility = "unset";
 });
->>>>>>> 4fc8f29ce413fed89618bade7b4daa8f13e57556
