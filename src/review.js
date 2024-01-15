@@ -129,10 +129,12 @@ const closeModal = () => {
 function deleteReviewHtml(deleteTargetId){
   let reviewEl = document.querySelectorAll('.comment-wrap-box');
   //리뷰 리스트에서 forEach 돌면서 삭제할 리뷰 id 와 같은 id 를 가지고 있는 리뷰 삭제
-  reviewEl.forEach(el => {
-    const target = el.querySelector('.comment-id').value;
-    if(deleteTargetId === target){
-      el.remove();
+  reviewEl.forEach((el, idx) => {
+    if(el.id !== 'noReview'){
+      const target = el.querySelector('.comment-id').value;
+      if(deleteTargetId === target){
+        el.remove();
+      }
     }
   })
 }
