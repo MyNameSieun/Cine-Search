@@ -57,6 +57,7 @@ const saveReview = (name, password, contents) => {
   reviewPushData.push(dataObj);
   sendData[movieId] = reviewPushData;
   localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
+  addComment(name, contents, id);
   id += 1;
 };
 
@@ -81,9 +82,11 @@ const confirmPasswordModal = () => {
 //리뷰 삭제 기능
 const deleteReview = (targetId) => {
   let prevData = JSON.parse(loadData());
+  console.log(prevData);
   let removeId = null;
   let targetPassword = null;
   const checkPassword = $checkPassword.value;
+  console.log(checkPassword);
   // 유효성 검사
   if (!checkPassword) {
     alert("비밀번호를 입력해주세요.");
@@ -111,9 +114,10 @@ const deleteReview = (targetId) => {
   prevData[movieId].splice(removeId, 1);
   localStorage.setItem(REVIEW_KEY, JSON.stringify(prevData));
   alert("삭제가 완료되었습니다.");
-  // countReview();
-  //deleteTargetId = null; //새로고침 안할거면 날려야함.
-  location.reload();
+  deleteReviewHtml(deleteTargetId);
+  closeModal();
+  countReview();
+  // location.reload();
 };
 
 //비밀번호 확인 모달 닫기 기능
@@ -123,6 +127,52 @@ const closeModal = () => {
   $checkPassword.value = "";
 };
 
+//리뷰 삭제 시 html 삭제
+function deleteReviewHtml(deleteTargetId) {
+  let reviewEl = document.querySelectorAll(".comment-wrap-box");
+  //리뷰 리스트에서 forEach 돌면서 삭제할 리뷰 id 와 같은 id 를 가지고 있는 리뷰 삭제
+  reviewEl.forEach((el, idx) => {
+    if (el.id !== "noReview") {
+      const target = el.querySelector(".comment-id").value;
+      if (deleteTargetId === target) {
+        el.remove();
+      }
+    }
+  });
+}
+
+//추가 버튼 눌렀을 때 리뷰 바로 추가
+function addComment(name, contents, id) {
+  const $noReviewsEl = document.querySelector("#noReview");
+  if ($noReviewsEl !== null) {
+    $noReviewsEl.style.display = "none";
+  }
+
+  const nowWriter = name;
+  let nowContents = contents;
+
+  if (nowContents.includes("\n")) {
+    nowContents = nowContents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
+  }
+
+  const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  const addHTML = `<div class="comment-wrap-box">
+  <div class="thumb-name-comment">
+  <div class="thumb-box-in-list" id="thumb" style="background-color:${randomColor}"><span>${nowWriter[0]}</span></div>
+  <div class="comment-contents">
+      <span class="writer-name">${nowWriter}</span>
+      <p class="writed-comment">${nowContents}</p>
+    </div>
+  </div>
+  <div>
+    <!-- <span class="material-symbols-outlined">more_vert</span> -->
+    <button type="button" class="btn-review-remove"><i class="xi-trash-o"></i></button>
+    <input type="hidden" value="${id}" class="comment-id" />
+  </div>
+  </div>`;
+
+  $commentList.innerHTML += addHTML;
+}
 // 이벤트 영역 시작 ============
 
 //작성폼 클릭 시 버튼 영역 활성화
@@ -177,9 +227,10 @@ $btnSend.addEventListener("click", () => {
 
   saveReview(writer, password, comment);
   alert("리뷰 등록이 완료되었습니다.");
+
   countReview();
   resetForm();
-  location.reload();
+  // location.reload();
 });
 
 //작성폼에 입력 시 등록 버튼 활성화
