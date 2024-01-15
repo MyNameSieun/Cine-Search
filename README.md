@@ -20,7 +20,7 @@ Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다.
 **1. git clone**
 
    ```bash 
-   $ git clone 주소추가
+   $ git clone https://github.com/MyNameSieun/Cin-Search.git
    $ cd CineSearch
    ```
 
