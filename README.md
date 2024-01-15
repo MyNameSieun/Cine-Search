@@ -19,7 +19,7 @@ Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다.
 
 **1. git clone**
 
-   ```bash 
+   ```shell
    $ git clone https://github.com/MyNameSieun/Cin-Search.git
    $ cd CineSearch
    ```
@@ -92,3 +92,6 @@ Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다.
 
  |  <p align="center"><img src="https://github.com/MyNameSieun/Cin-Search/assets/103973797/ff824efc-1d31-4a1c-85fa-9255af1c9745" style="width:80%"/></p>    |
 | ---- |
+
+<br><br><br>
+---
