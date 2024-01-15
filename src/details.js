@@ -5,6 +5,9 @@ function showMovies() {
 
   if (!movieId) {
     console.error("영화 ID를 찾을 수 없습니다.");
+    //영화 id 없을 시 메인화면으로 이동
+    alert('영화 id를 찾을 수 없습니다. 메인 화면으로 이동합니다.');
+    location.replace('/');
     return;
   }
 
@@ -14,7 +17,7 @@ function showMovies() {
     .then((response) => response.json())
     .then((data) => {
       const movie = data;
-      displayMoviesInfo([movie]); // -> 객체(유사배열객체인가?)
+      displayMoviesInfo([movie]); // -> 객체(유사배열객체인가?)s
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
@@ -33,7 +36,7 @@ function generateMoviesInfo(movie) {
             <p class="genres">${movie.genres[0].name}</p>
           </div>
           <p class="overview">${movie.overview}</p>
-          <p class="title">${movie.title}</p>
+          <p class="title gowun-batang-regular ">${movie.title}</p>
         </div>
         `;
 
