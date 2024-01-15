@@ -33,7 +33,7 @@ function generateMoviesInfo(movie) {
             <p class="genres">${movie.genres[0].name}</p>
           </div>
           <p class="overview">${movie.overview}</p>
-          <p class="title">${movie.title}</p>
+          <p class="title gowun-batang-regular ">${movie.title}</p>
         </div>
         `;
 

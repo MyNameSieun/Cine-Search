@@ -60,6 +60,7 @@
   justify-content: left;
   font-size: 30px;
   background-color: transparent;
+  position: relative;
 }
 
 #movieDetailInformation {
@@ -68,6 +69,7 @@
   margin: 0px 20px;
   font-weight: bolder;
   color: white;
+  position: absolute;
 }
 
 #movieComment,
@@ -77,6 +79,7 @@
   margin: 0px 20px;
   font-weight: bolder;
   color: white;
+  position: absolute;
 }
 
 .selectedContainer {
@@ -84,17 +87,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-right: 30px;
+  font-size: 26px;
 }
 
 .selectorBox {
-  height: 8px;
-  width: 130px;
-  margin: 15px 0px 10px 0px;
+  height: 7px;
+  width: 123px;
+  margin: 77px 0px 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  background-color: #ef504e;
 }
 
 .detailed-container {
@@ -104,23 +109,24 @@
 }
 
 .movieTitle {
-  font-size: 50px;
-  padding: 20px;
+  font-size: 40px;
+  padding: 20px 0 20px 0;
 }
 
 .movieTagLine {
-  font-size: 30px;
-  padding: 20px;
+  font-size: 25px;
+  padding: 20px 0 20px 0;
 }
 
 .movieOverView {
-  font-size: 30px;
-  padding: 20px;
+  font-size: 21px;
+  padding: 20px 0 20px 0;
+  line-height: 31px;
 }
 
 .movieMadeCompany {
-  font-size: 25px;
-  padding: 20px;
+  font-size: 16px;
+  padding: 80px 0 20px 0;
   margin: 10px 0px 0px 0px;
 }
 
@@ -318,23 +324,23 @@
 }
 
 /* 리뷰 삭제 버튼 */
-.btn-review-remove{
+.btn-review-remove {
   padding: 5px;
   border: none;
   background: transparent;
-  color:#fff;
+  color: #fff;
   font-size: 18px;
   border-radius: 30px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.btn-review-remove:hover{
+.btn-review-remove:hover {
   background-color: #eee;
-  color:#000
+  color: #000;
 }
 
 /* 리뷰 삭제 모달 */
-.modal-wrap{
+.modal-wrap {
   position: fixed;
   left: 0;
   right: 0;
@@ -346,17 +352,17 @@
   justify-content: center;
   align-items: center;
 }
-.modal-wrap:before{
-  content:''; 
-  display:block; 
-  position:absolute; 
-  top:0; 
-  bottom:0; 
-  left:0; 
-  right:0; 
-  background-color: rgba(0,0,0,.4);
+.modal-wrap:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
 }
-.modal-box{
+.modal-box {
   position: relative;
   padding: 10px 20px;
   width: 250px;
@@ -365,18 +371,18 @@
   border-radius: 10px;
 }
 .modal-header,
-.modal-body{
+.modal-body {
   padding: 10px 0;
 }
-.modal-title{  
+.modal-title {
   font-size: 18px;
 }
-.btn-modal-close{
+.btn-modal-close {
   border: none;
   background-color: transparent;
-  color:#000;
+  color: #000;
 }
-.check-password{
+.check-password {
   margin-top: 5px;
   display: block;
   width: 100%;
@@ -384,35 +390,35 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
-.check-password::placeholder{
+.check-password::placeholder {
   font-weight: bold;
-  color:#ddd;
+  color: #ddd;
 }
-.modal-btn-bar{
+.modal-btn-bar {
   display: flex;
   margin-top: 10px;
   justify-content: right;
 }
-.modal-btn-bar .btn-gray + .btn-blue{
+.modal-btn-bar .btn-gray + .btn-blue {
   margin-left: 10px;
 }
-.btn-gray{
+.btn-gray {
   padding: 5px;
   display: inline-block;
   font-weight: bold;
   border: 1px solid #ddd;
   background: #ddd;
   border-radius: 5px;
-  color:#000;
+  color: #000;
   vertical-align: middle;
 }
-.btn-blue{
+.btn-blue {
   padding: 5px;
   display: inline-block;
   font-weight: bold;
   border: 1px solid #ddd;
   background: #0080ff;
   border-radius: 5px;
-  color:#fff;
+  color: #fff;
   vertical-align: middle;
 }
