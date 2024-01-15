@@ -57,7 +57,7 @@ const saveReview = (name, password, contents) => {
   reviewPushData.push(dataObj);
   sendData[movieId] = reviewPushData;
   localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
-  addComment(name, contents, id)
+  addComment(name, contents, id);
   id += 1;
 };
 
@@ -76,6 +76,7 @@ countReview();
 //비밀번호 확인 모달 노출
 const confirmPasswordModal = () => {
   $modal.style.display = "flex";
+  $checkPassword.focus();
 };
 
 //리뷰 삭제 기능
@@ -111,9 +112,10 @@ const deleteReview = (targetId) => {
   prevData[movieId].splice(removeId, 1);
   localStorage.setItem(REVIEW_KEY, JSON.stringify(prevData));
   alert("삭제가 완료되었습니다.");
+  deleteReviewHtml(deleteTargetId);
+  closeModal();
   countReview();
-  deleteTargetId = null; //새로고침 안할거면 날려야함.
-  location.reload();
+  // location.reload();
 };
 
 //비밀번호 확인 모달 닫기 기능
@@ -123,11 +125,23 @@ const closeModal = () => {
   $checkPassword.value = "";
 };
 
+//리뷰 삭제 시 html 삭제
+function deleteReviewHtml(deleteTargetId){
+  let reviewEl = document.querySelectorAll('.comment-wrap-box');
+  //리뷰 리스트에서 forEach 돌면서 삭제할 리뷰 id 와 같은 id 를 가지고 있는 리뷰 삭제
+  reviewEl.forEach(el => {
+    const target = el.querySelector('.comment-id').value;
+    if(deleteTargetId === target){
+      el.remove();
+    }
+  })
+}
+
 //추가 버튼 눌렀을 때 리뷰 바로 추가
 function addComment(name, contents, id) {
   // const $noReviewsEl = document.querySelector("#noReview");
   // $noReviewsEl.style.display = "none";
-  
+
 
   const reviewData = JSON.parse(loadData());
 
