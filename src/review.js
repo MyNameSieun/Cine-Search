@@ -139,7 +139,6 @@ function deleteReviewHtml(deleteTargetId) {
       }
     }
   });
-
 }
 
 //추가 버튼 눌렀을 때 리뷰 바로 추가
