@@ -57,6 +57,7 @@ const saveReview = (name, password, contents) => {
   reviewPushData.push(dataObj);
   sendData[movieId] = reviewPushData;
   localStorage.setItem(REVIEW_KEY, JSON.stringify(sendData));
+  addComment(name, contents, id)
   id += 1;
 };
 
@@ -110,8 +111,8 @@ const deleteReview = (targetId) => {
   prevData[movieId].splice(removeId, 1);
   localStorage.setItem(REVIEW_KEY, JSON.stringify(prevData));
   alert("삭제가 완료되었습니다.");
-  // countReview();
-  //deleteTargetId = null; //새로고침 안할거면 날려야함.
+  countReview();
+  deleteTargetId = null; //새로고침 안할거면 날려야함.
   location.reload();
 };
 
@@ -122,6 +123,41 @@ const closeModal = () => {
   $checkPassword.value = "";
 };
 
+//추가 버튼 눌렀을 때 리뷰 바로 추가
+function addComment(name, contents, id) {
+  // const $noReviewsEl = document.querySelector("#noReview");
+  // $noReviewsEl.style.display = "none";
+  
+
+  const reviewData = JSON.parse(loadData());
+
+  const nowWriter = name;
+  // const nowPassword = password;
+  let nowContents = contents;
+  // const id = reviewData[movieId].id;
+  // console.log(reviewData[movieId].length);
+
+  if (nowContents.includes("\n")) {
+    nowContents = nowContents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
+  }
+
+  const addHTML = `<div class="comment-wrap-box">
+  <div class="thumb-name-comment">
+    <div class="thumb-box-in-list"></div>
+    <div class="comment-contents">
+      <span class="writer-name">${nowWriter}</span>
+      <p class="writed-comment">${nowContents}</p>
+    </div>
+  </div>
+  <div>
+    <!-- <span class="material-symbols-outlined">more_vert</span> -->
+    <button type="button" class="btn-review-remove"><i class="xi-trash-o"></i></button>
+    <input type="hidden" value="${id}" class="comment-id" />
+  </div>
+  </div>`;
+
+  $commentList.innerHTML += addHTML;
+}
 // 이벤트 영역 시작 ============
 
 //작성폼 클릭 시 버튼 영역 활성화
@@ -180,42 +216,6 @@ $btnSend.addEventListener("click", () => {
   countReview();
   resetForm();
   // location.reload();
-  addComment();
-
-  //추가 버튼 눌렀을 때 리뷰 바로 추가
-  function addComment() {
-    const $noReviewsEl = document.querySelector("#noReview");
-    $noReviewsEl.style.display = "none";
-
-    const reviewData = JSON.parse(loadData());
-
-    const nowWriter = writer;
-    const nowPassword = password;
-    let nowContents = comment;
-    const id = reviewData[movieId].id;
-    console.log(reviewData[movieId].length);
-
-    if (nowContents.includes("\n")) {
-      nowContents = nowContents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
-    }
-
-    const addHTML = `<div class="comment-wrap-box">
-    <div class="thumb-name-comment">
-      <div class="thumb-box-in-list"></div>
-      <div class="comment-contents">
-        <span class="writer-name">${nowWriter}</span>
-        <p class="writed-comment">${nowContents}</p>
-      </div>
-    </div>
-    <div>
-      <!-- <span class="material-symbols-outlined">more_vert</span> -->
-      <button type="button" class="btn-review-remove"><i class="xi-trash-o"></i></button>
-      <input type="hidden" value="${id}" class="comment-id" />
-    </div>
-    </div>`;
-
-    $commentList.innerHTML += addHTML;
-  }
 });
 
 //작성폼에 입력 시 등록 버튼 활성화
