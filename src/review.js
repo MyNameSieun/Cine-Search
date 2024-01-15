@@ -75,7 +75,6 @@ countReview();
 //비밀번호 확인 모달 노출
 const confirmPasswordModal = () => {
   $modal.style.display = "flex";
-  $checkPassword.focus();
 };
 
 //리뷰 삭제 기능
@@ -177,9 +176,46 @@ $btnSend.addEventListener("click", () => {
 
   saveReview(writer, password, comment);
   alert("리뷰 등록이 완료되었습니다.");
+
   countReview();
   resetForm();
-  location.reload();
+  // location.reload();
+  addComment();
+
+  //추가 버튼 눌렀을 때 리뷰 바로 추가
+  function addComment() {
+    const $noReviewsEl = document.querySelector("#noReview");
+    $noReviewsEl.style.display = "none";
+
+    const reviewData = JSON.parse(loadData());
+
+    const nowWriter = writer;
+    const nowPassword = password;
+    let nowContents = comment;
+    const id = reviewData[movieId].id;
+    console.log(reviewData[movieId].length);
+
+    if (nowContents.includes("\n")) {
+      nowContents = nowContents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
+    }
+
+    const addHTML = `<div class="comment-wrap-box">
+    <div class="thumb-name-comment">
+      <div class="thumb-box-in-list"></div>
+      <div class="comment-contents">
+        <span class="writer-name">${nowWriter}</span>
+        <p class="writed-comment">${nowContents}</p>
+      </div>
+    </div>
+    <div>
+      <!-- <span class="material-symbols-outlined">more_vert</span> -->
+      <button type="button" class="btn-review-remove"><i class="xi-trash-o"></i></button>
+      <input type="hidden" value="${id}" class="comment-id" />
+    </div>
+    </div>`;
+
+    $commentList.innerHTML += addHTML;
+  }
 });
 
 //작성폼에 입력 시 등록 버튼 활성화

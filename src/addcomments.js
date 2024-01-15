@@ -45,16 +45,20 @@ const addComments = () => {
 
     $commentList.innerHTML += addHTML;
   });
+};
 
+function theresNoReview() {
   if (reviewDataArr.length === 0) {
     const noReviewsHTML = `
     <span class="no-reviews">작성된 리뷰가 없습니다.</span>`;
 
     const $noReviewsEl = document.createElement("div");
     $noReviewsEl.classList.add("comment-wrap-box");
+    $noReviewsEl.id = "noReview";
     $noReviewsEl.innerHTML = noReviewsHTML;
     $commentList.appendChild($noReviewsEl);
   }
-};
+}
 
 addComments();
+theresNoReview();
