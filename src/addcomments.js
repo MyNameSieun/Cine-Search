@@ -30,9 +30,9 @@ const addComments = () => {
 
     const addHTML = `<div class="comment-wrap-box">
     <div class="thumb-name-comment">
-      <div class="thumb-box-in-list"></div>
+      <div class="thumb-box-in-list" id="thumb">${writer[0]}</div>
       <div class="comment-contents">
-        <span class="writer-name">${writer}</span>
+        <span class="writer-name" id="writerName">${writer}</span>
         <p class="writed-comment">${contents}</p>
       </div>
     </div>
@@ -44,6 +44,11 @@ const addComments = () => {
     </div>`;
 
     $commentList.innerHTML += addHTML;
+
+    // const thumbnailText = writer[0];
+    // const $thumbnail = document.querySelector("#thumb");
+    // $thumbnail.textContent = thumbnailText;
+    // console.log(thumbnailText);
   });
 };
 

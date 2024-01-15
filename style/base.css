@@ -46,6 +46,13 @@ body {
 
 /* footer */
 .footer {
-  height: 10vh;
+  height: 20vh;
   color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.footer-copyright {
+  position: absolute;
+  bottom: 27px;
 }

@@ -70,6 +70,7 @@
   font-weight: bolder;
   color: white;
   position: absolute;
+  cursor: pointer;
 }
 
 #movieComment,
@@ -80,6 +81,7 @@
   font-weight: bolder;
   color: white;
   position: absolute;
+  cursor: pointer;
 }
 
 .selectedContainer {
@@ -106,6 +108,7 @@
   padding: 0px 60px 20px 60px;
   color: white;
   background-color: transparent;
+  min-height: 700px;
 }
 
 .movieTitle {
@@ -119,9 +122,9 @@
 }
 
 .movieOverView {
-  font-size: 21px;
+  font-size: 19px;
   padding: 20px 0 20px 0;
-  line-height: 31px;
+  line-height: 27px;
 }
 
 .movieMadeCompany {
@@ -134,6 +137,7 @@
 .review-container {
   width: 85%;
   margin: 0 auto 0 auto;
+  min-height: 700px;
 }
 
 .review-top-info {
@@ -300,6 +304,7 @@
 .trailer-container {
   position: relative;
   padding-bottom: 56.25%;
+  min-height: 700px;
 }
 
 .trailer-container iframe {
