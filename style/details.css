@@ -39,7 +39,7 @@
 .overview {
   font-size: 15px;
   line-height: 20px;
-  width: 400px;
+  width: 500px;
   margin-bottom: 20px;
 }
 
@@ -60,6 +60,7 @@
   justify-content: left;
   font-size: 30px;
   background-color: transparent;
+  position: relative;
 }
 
 #movieDetailInformation {
@@ -68,6 +69,8 @@
   margin: 0px 20px;
   font-weight: bolder;
   color: white;
+  position: absolute;
+  cursor: pointer;
 }
 
 #movieComment,
@@ -77,6 +80,8 @@
   margin: 0px 20px;
   font-weight: bolder;
   color: white;
+  position: absolute;
+  cursor: pointer;
 }
 
 .selectedContainer {
@@ -84,43 +89,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-right: 30px;
+  font-size: 26px;
 }
 
 .selectorBox {
-  height: 8px;
-  width: 130px;
-  margin: 15px 0px 10px 0px;
+  height: 7px;
+  width: 123px;
+  margin: 77px 0px 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: red;
+  background-color: #ef504e;
 }
 
 .detailed-container {
   padding: 0px 60px 20px 60px;
   color: white;
   background-color: transparent;
+  min-height: 700px;
 }
 
 .movieTitle {
-  font-size: 50px;
-  padding: 20px;
+  font-size: 40px;
+  padding: 20px 0 20px 0;
 }
 
 .movieTagLine {
-  font-size: 30px;
-  padding: 20px;
+  font-size: 25px;
+  padding: 20px 0 20px 0;
 }
 
 .movieOverView {
-  font-size: 30px;
-  padding: 20px;
+  font-size: 19px;
+  padding: 20px 0 20px 0;
+  line-height: 27px;
 }
 
 .movieMadeCompany {
-  font-size: 25px;
-  padding: 20px;
+  font-size: 16px;
+  padding: 80px 0 20px 0;
   margin: 10px 0px 0px 0px;
 }
 
@@ -128,6 +137,7 @@
 .review-container {
   width: 85%;
   margin: 0 auto 0 auto;
+  min-height: 700px;
 }
 
 .review-top-info {
@@ -165,7 +175,9 @@
   width: 40px;
   height: 40px;
   border-radius: 40px;
-  background-color: #fff;
+  background-image: url("../assets/images/default_profile.png");
+  background-size: cover;
+  background-position: center;
 }
 .user-comment-box {
   margin-left: 15px;
@@ -259,6 +271,15 @@
   border-radius: 40px;
   align-self: flex-start;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumb-box-in-list > span {
+  font-weight: bold;
+  line-height: 45px;
+  user-select: none;
 }
 
 .comment-contents {
@@ -292,14 +313,117 @@
 }
 
 .trailer-container {
-  margin: 50px auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  padding-bottom: 56.25%;
+  min-height: 700px;
 }
 
 .trailer-container iframe {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
   border-radius: 10px;
-  width: 1100px;
-  height: 618.75px;
+  transform: translate(-50%, -50%); /* 자신의 50%만큼 위, 왼쪽 이동 */
+}
+
+/* 리뷰 삭제 버튼 */
+.btn-review-remove {
+  padding: 5px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.btn-review-remove:hover {
+  background-color: #eee;
+  color: #000;
+}
+
+/* 리뷰 삭제 모달 */
+.modal-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+.modal-wrap:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-box {
+  position: relative;
+  padding: 10px 20px;
+  width: 250px;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.modal-header,
+.modal-body {
+  padding: 10px 0;
+}
+.modal-title {
+  font-size: 18px;
+}
+.btn-modal-close {
+  border: none;
+  background-color: transparent;
+  color: #000;
+}
+.check-password {
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.check-password::placeholder {
+  font-weight: bold;
+  color: #ddd;
+}
+.modal-btn-bar {
+  display: flex;
+  margin-top: 10px;
+  justify-content: right;
+}
+.modal-btn-bar .btn-gray + .btn-blue {
+  margin-left: 10px;
+}
+.btn-gray {
+  padding: 5px;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  background: #ddd;
+  border-radius: 5px;
+  color: #000;
+  vertical-align: middle;
+}
+.btn-blue {
+  padding: 5px;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  background: #0080ff;
+  border-radius: 5px;
+  color: #fff;
+  vertical-align: middle;
 }
