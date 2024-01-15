@@ -80,9 +80,11 @@ const confirmPasswordModal = () => {
 //리뷰 삭제 기능
 const deleteReview = (targetId) => {
   let prevData = JSON.parse(loadData());
+  console.log(prevData);
   let removeId = null;
   let targetPassword = null;
   const checkPassword = $checkPassword.value;
+  console.log(checkPassword);
   // 유효성 검사
   if (!checkPassword) {
     alert("비밀번호를 입력해주세요.");
@@ -102,6 +104,8 @@ const deleteReview = (targetId) => {
   });
   if (targetPassword !== checkPassword) {
     alert("비밀번호가 다릅니다. 비밀번호 확인 후 다시 시도해주세요.");
+    console.log(targetId);
+    console.log(targetPassword);
     $checkPassword.value = "";
     $checkPassword.focus();
     return;
@@ -109,6 +113,8 @@ const deleteReview = (targetId) => {
   //splice로 삭제
   prevData[movieId].splice(removeId, 1);
   localStorage.setItem(REVIEW_KEY, JSON.stringify(prevData));
+  console.log(targetId);
+  console.log(targetPassword);
   alert("삭제가 완료되었습니다.");
   // countReview();
   //deleteTargetId = null; //새로고침 안할거면 날려야함.
@@ -185,7 +191,9 @@ $btnSend.addEventListener("click", () => {
   //추가 버튼 눌렀을 때 리뷰 바로 추가
   function addComment() {
     const $noReviewsEl = document.querySelector("#noReview");
-    $noReviewsEl.style.display = "none";
+    if ($noReviewsEl !== null) {
+      $noReviewsEl.style.display = "none";
+    }
 
     const reviewData = JSON.parse(loadData());
 
@@ -193,7 +201,6 @@ $btnSend.addEventListener("click", () => {
     const nowPassword = password;
     let nowContents = comment;
     const id = reviewData[movieId].id;
-    console.log(reviewData[movieId].length);
 
     if (nowContents.includes("\n")) {
       nowContents = nowContents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
