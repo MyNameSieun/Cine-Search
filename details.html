@@ -10,10 +10,21 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <!-- 아이콘 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/base.css" />
     <link rel="stylesheet" href="./style/details.css" />
+
+    <script type="module" src="./src/detailcontext.js"></script>
     <script type="module" src="./src/details.js"></script>
+    <script type="module" src="./src/review.js"></script>
+    <script type="module" src="./src/addcomments.js"></script>
+    <script type="module" src="./src/showtrailer.js"></script>
   </head>
   <body>
     <main class="container">
@@ -43,43 +54,96 @@
 
       <!-- tap meun_이혜진 -->
       <section class="tap-container">
-        <div>상세정보</div>
-        <div>영화리뷰</div>
+        <div class="selectedContainer">
+          <div id="movieDetailInformation">상세정보</div>
+          <div class="selectorBox" id="detailSelectorBox" style="visibility: unset"></div>
+        </div>
+
+        <div class="selectedContainer">
+          <div id="movieComment">영화리뷰</div>
+          <div class="selectorBox" id="commentSelectorBox" style="visibility: hidden"></div>
+        </div>
+
+        <div class="selectedContainer">
+          <div id="trailer">예고편</div>
+          <div class="selectorBox" id="trailerSelectorBox" style="visibility: hidden"></div>
+        </div>
+      </section>
+
+      <!-- details info_이혜진 -->
+      <section class="detailed-container" style="display: block">
+        <div class="movieTitle"></div>
+        <div class="movieTagLine"></div>
+        <div class="movieOverView"></div>
+        <div class="movieMadeCompany"></div>
       </section>
 
       <!-- movie review -->
-      <section class="review-container">
+      <section class="review-container" style="display: none">
         <!-- 강지수 -->
         <article class="comment">
-          <div class="review-top-info">댓글 <span id="review-cnt">1</span>개</div>
-          <form id="reviewForm" class="review-form">
+          <div class="review-top-info">댓글 <span class="review-cnt">0</span>개</div>
+          <div id="reviewForm" class="review-form">
             <div class="user-info-area">
-              <input type="text" class="review-input" placeholder="닉네임" />
-              <input type="password" class="review-input" placeholder="비밀번호" />
+              <input type="text" id="writer" class="review-input" placeholder="닉네임" />
+              <input type="password" id="password" class="review-input" placeholder="비밀번호" />
             </div>
             <div class="review-cont-area">
               <div class="thumb-box"></div>
               <div class="user-comment-box">
-                <textarea
-                  name=""
-                  id=""
-                  class="review-textarea"
-                  cols="30"
-                  rows="1"
-                  placeholder="리뷰를 입력해주세요."
-                ></textarea>
+                <textarea class="review-textarea" cols="30" rows="1" placeholder="리뷰를 입력해주세요."></textarea>
                 <div class="review-btn-box">
                   <button type="button" class="btn-cancel">취소</button>
-                  <button type="submit" class="btn-send" disabled>등록</button>
+                  <button type="button" class="btn-send" disabled>등록</button>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </article>
-        <!-- 서지원 -->
-        <article class="comment-list"></article>
+        <!-- 서지원 리뷰 댓글 추가-->
+        <article class="comment-list" id="commentList">
+          <!-- <div class="comment-wrap-box">
+            <div class="thumb-name-comment">
+              <div class="thumb-box-in-list"></div>
+              <div class="comment-contents">
+                <span class="writer-name">한종현</span>
+                <p class="writed-comment">html 테스트용</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined">more_vert</span>
+          </div> -->
+        </article>
+      </section>
+
+      <!-- Trailer 서지원 -->
+      <section class="trailer-container" style="display: none">
+        <!-- <div class="dff"></div> -->
+        <!-- <iframe
+          src="https://www.youtube.com/embed/rc8vLvZ0fTE?si=rdV_GshvrrsX1JaY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe> -->
       </section>
     </main>
+
+    <div class="modal-wrap">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3 class="modal-title">리뷰 삭제</h3>
+          <button type="button" class="btn-modal-close"><i class="xi-close"></i></button>
+        </div>
+        <div class="modal-body">
+          <label for="checkPassword">비밀번호 확인</label>
+          <input type="password" id="checkPassword" class="check-password" placeholder="비밀번호를 입력해주세요.">
+          <div class="modal-btn-bar">
+            <button type="button" id="btnCheckCancel" class="btn-gray">취소</button>
+            <button type="button" id="btnCheckConfirm" class="btn-blue">확인</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!--footer-->
     <footer class="footer"></footer>
@@ -88,7 +152,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="./src/review.js"></script>
-    <!--임시로 추가-->
   </body>
 </html>

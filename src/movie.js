@@ -37,12 +37,11 @@ function generateCardHtml(movie) {
        ${overview}
      </p>
      <hr class="hr-bottom" />
-
-     <a class="btn btn-primary" href="details.html">상세 정보</a>
+     <a class="btn btn-primary" href="details.html?id=${movie.id}">상세 정보</a>
    </div>
  </div>
  `;
-
+  // href="details.html"
   // 새로운 <div> 요소를 생성
   const el = document.createElement("div");
   // 생성한 <div> 요소에 "card-container" 클래스를 추가
