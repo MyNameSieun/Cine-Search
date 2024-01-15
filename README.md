@@ -6,9 +6,10 @@ Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다. 
 
 # 🎀 팀원 소개
 
+
 |                            박시은                            |                            강지수                            |                            서지원                            |                            이혜진                            | 
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|                          이미지                          |                           이미지 |                             이미지                       |                          이미지                              |       
+|   <p align="center"><img src="https://github.com/MyNameSieun/Cin-Search/assets/103973797/f90602f0-ab51-41cb-94b8-6891ca7ab1ad" style="width:30%" /></p>     |            <p align="center"><img src="https://github.com/MyNameSieun/Cin-Search/assets/103973797/8952f704-b108-47a1-9b01-bb3f1e5ff823" style="width:40%" /></p> |                    <p align="center"><img src="https://github.com/MyNameSieun/Cin-Search/assets/103973797/c70c55db-5969-46d0-bdec-66a93cd281d3" style="width:30%" /></p>                      |                   <p align="center"><img src="https://github.com/MyNameSieun/Cin-Search/assets/103973797/632ed23f-1a9f-4d40-b0a2-21661735b2e0" style="width:45%" /></p>                        |       
 |       [@MyNameSieun](https://github.com/MyNameSieun) |              [@jigico](https://github.com/jigico)         |           [@seopport](https://github.com/seopport)                 |                  [@we-are-good](https://github.com/we-are-good/javascript_indivisual)          |       
 |                         팀장                          |                          팀원                         |                           팀원                           |                        팀원                         |   
 |                         Frontend                          |                       Frontend                         |              Frontend                        |                        Frontend                        |  
