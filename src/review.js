@@ -75,6 +75,7 @@ countReview();
 //비밀번호 확인 모달 노출
 const confirmPasswordModal = () => {
   $modal.style.display = "flex";
+  $checkPassword.focus();
 };
 
 //리뷰 삭제 기능

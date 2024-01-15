@@ -50,10 +50,10 @@ const addComments = () => {
     const noReviewsHTML = `
     <span class="no-reviews">작성된 리뷰가 없습니다.</span>`;
 
-    const noReviewsEl = document.createElement("div");
-    noReviewsEl.classList.add("comment-wrap-box");
-    noReviewsEl.innerHTML = noReviewsHTML;
-    $commentList.appendChild(noReviewsEl);
+    const $noReviewsEl = document.createElement("div");
+    $noReviewsEl.classList.add("comment-wrap-box");
+    $noReviewsEl.innerHTML = noReviewsHTML;
+    $commentList.appendChild($noReviewsEl);
   }
 };
 

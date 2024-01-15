@@ -5,7 +5,8 @@ function showMovies() {
 
   if (!movieId) {
     console.error("영화 ID를 찾을 수 없습니다.");
-    return;}
+    return;
+  }
 
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&language=ko-KR`;
 
@@ -13,8 +14,8 @@ function showMovies() {
     .then((response) => response.json())
     .then((data) => {
       const movie = data;
-      console.log(movie)
-      movieProperty(movie); 
+      console.log(movie);
+      movieProperty(movie);
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
@@ -34,16 +35,21 @@ const box2up = document.querySelector("#commentSelectorBox");
 const box3up = document.querySelector("#trailerSelectorBox");
 
 const movieProperty = (movie) => {
-  const {title, tagline, overview, production_companies} = movie;
-  document.querySelector(".movieTitle").textContent=title;
-  document.querySelector(".movieTagLine").textContent=tagline;
-  document.querySelector(".movieOverView").textContent=overview;
-  if (movie.hasOwnProperty("production_companies")>0 === true) {
-    if (production_companies.length === 1){
-    document.querySelector(".movieMadeCompany").textContent=production_companies[0].name;}
-    else {
-      const otherCompany = production_companies.length-1
-      document.querySelector(".movieMadeCompany").textContent=`${production_companies[0].name} 외 ${otherCompany} 제작`;}}}
+  const { title, tagline, overview, production_companies } = movie;
+  document.querySelector(".movieTitle").textContent = title;
+  document.querySelector(".movieTagLine").textContent = tagline;
+  document.querySelector(".movieOverView").textContent = overview;
+  if (movie.hasOwnProperty("production_companies") > 0 === true) {
+    if (production_companies.length === 1) {
+      document.querySelector(".movieMadeCompany").textContent = production_companies[0].name;
+    } else {
+      const otherCompany = production_companies.length - 1;
+      document.querySelector(
+        ".movieMadeCompany"
+      ).textContent = `${production_companies[0].name} 외 ${otherCompany} 제작`;
+    }
+  }
+};
 //상세내용 넣기
 
 detailtitle.addEventListener("click", (event) => {
@@ -68,12 +74,11 @@ commenttitle.addEventListener("click", (event) => {
   box3up.style.visibility = "hidden";
 });
 
-showMovies()
+showMovies();
 
-trailer.addEventListener("click", (event) => {
-  console.log("trailerclicked");
+$trailer.addEventListener("click", (event) => {
   event.preventDefault();
-  trailerBox.style.display = "block";
+  trailerBox.style.display = "flex";
   detailcontainer.style.display = "none";
   commentbox.style.display = "none";
 

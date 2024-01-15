@@ -39,7 +39,7 @@
 .overview {
   font-size: 15px;
   line-height: 20px;
-  width: 400px;
+  width: 500px;
   margin-bottom: 20px;
 }
 
@@ -298,29 +298,18 @@
 }
 
 .trailer-container {
-  margin: 50px auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  padding-bottom: 56.25%;
 }
 
 .trailer-container iframe {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
   border-radius: 10px;
-  width: 1100px;
-  height: 618.75px;
-}
-
-.trailer-container {
-  margin: 50px auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.trailer-container iframe {
-  border-radius: 10px;
-  width: 1100px;
-  height: 618.75px;
+  transform: translate(-50%, -50%); /* 자신의 50%만큼 위, 왼쪽 이동 */
 }
 
 /* 리뷰 삭제 버튼 */
