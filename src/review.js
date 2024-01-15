@@ -106,8 +106,6 @@ const deleteReview = (targetId) => {
   });
   if (targetPassword !== checkPassword) {
     alert("비밀번호가 다릅니다. 비밀번호 확인 후 다시 시도해주세요.");
-    console.log(targetId);
-    console.log(targetPassword);
     $checkPassword.value = "";
     $checkPassword.focus();
     return;
@@ -115,8 +113,6 @@ const deleteReview = (targetId) => {
   //splice로 삭제
   prevData[movieId].splice(removeId, 1);
   localStorage.setItem(REVIEW_KEY, JSON.stringify(prevData));
-  console.log(targetId);
-  console.log(targetPassword);
   alert("삭제가 완료되었습니다.");
   deleteReviewHtml(deleteTargetId);
   closeModal();

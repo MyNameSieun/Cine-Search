@@ -278,6 +278,8 @@
 
 .thumb-box-in-list > span {
   font-weight: bold;
+  line-height: 45px;
+  user-select: none;
 }
 
 .comment-contents {
