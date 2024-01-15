@@ -5,7 +5,8 @@ function showMovies() {
 
   if (!movieId) {
     console.error("영화 ID를 찾을 수 없습니다.");
-    return;}
+    return;
+  }
 
   const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${api_key}&language=ko-KR`;
 
@@ -13,8 +14,8 @@ function showMovies() {
     .then((response) => response.json())
     .then((data) => {
       const movie = data;
-      console.log(movie)
-      movieProperty(movie); 
+      console.log(movie);
+      movieProperty(movie);
     })
     .catch((error) => {
       console.error("데이터를 가져오는 중 오류 발생:", error);
@@ -70,6 +71,8 @@ commenttitle.addEventListener("click", (event) => {
   box2up.style.visibility = "unset";
   $box3up.style.visibility = "hidden";
 });
+
+showMovies();
 
 trailer.addEventListener("click", (event) => {
   event.preventDefault();
