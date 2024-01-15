@@ -20,6 +20,7 @@ const addComments = () => {
     const writer = reviewData.writer;
     const password = reviewData.password;
     let contents = reviewData.contents;
+    const id = reviewData.id;
 
     //사용자가 엔터로 줄바꿈하였을 시 댓글에도 줄바꾸어 출력
     console.log(contents);
@@ -35,7 +36,11 @@ const addComments = () => {
         <p class="writed-comment">${contents}</p>
       </div>
     </div>
-    <span class="material-symbols-outlined">more_vert</span>
+    <div>
+      <!-- <span class="material-symbols-outlined">more_vert</span> -->
+      <button type="button" class="btn-review-remove"><i class="xi-trash-o"></i></button>
+      <input type="hidden" value="${id}" class="comment-id" />
+    </div>
     </div>`;
 
     $commentList.innerHTML += addHTML;

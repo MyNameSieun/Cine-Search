@@ -303,3 +303,116 @@
   width: 1100px;
   height: 618.75px;
 }
+
+.trailer-container {
+  margin: 50px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trailer-container iframe {
+  border-radius: 10px;
+  width: 1100px;
+  height: 618.75px;
+}
+
+/* 리뷰 삭제 버튼 */
+.btn-review-remove{
+  padding: 5px;
+  border: none;
+  background: transparent;
+  color:#fff;
+  font-size: 18px;
+  border-radius: 30px;
+  transition: all .3s;
+}
+
+.btn-review-remove:hover{
+  background-color: #eee;
+  color:#000
+}
+
+/* 리뷰 삭제 모달 */
+.modal-wrap{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1001;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+.modal-wrap:before{
+  content:''; 
+  display:block; 
+  position:absolute; 
+  top:0; 
+  bottom:0; 
+  left:0; 
+  right:0; 
+  background-color: rgba(0,0,0,.4);
+}
+.modal-box{
+  position: relative;
+  padding: 10px 20px;
+  width: 250px;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.modal-header,
+.modal-body{
+  padding: 10px 0;
+}
+.modal-title{  
+  font-size: 18px;
+}
+.btn-modal-close{
+  border: none;
+  background-color: transparent;
+  color:#000;
+}
+.check-password{
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.check-password::placeholder{
+  font-weight: bold;
+  color:#ddd;
+}
+.modal-btn-bar{
+  display: flex;
+  margin-top: 10px;
+  justify-content: right;
+}
+.modal-btn-bar .btn-gray + .btn-blue{
+  margin-left: 10px;
+}
+.btn-gray{
+  padding: 5px;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  background: #ddd;
+  border-radius: 5px;
+  color:#000;
+  vertical-align: middle;
+}
+.btn-blue{
+  padding: 5px;
+  display: inline-block;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  background: #0080ff;
+  border-radius: 5px;
+  color:#fff;
+  vertical-align: middle;
+}
