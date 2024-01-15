@@ -48,7 +48,7 @@ const addComments = () => {
     const $noReviewsEl = document.createElement("div");
     $noReviewsEl.classList.add("comment-wrap-box");
     $noReviewsEl.innerHTML = noReviewsHTML;
-    $commentList.appendChild(noReviewsEl);
+    $commentList.appendChild($noReviewsEl);
   }
 };
 
