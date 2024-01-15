@@ -1,7 +1,21 @@
 # 🖥️ 프로젝트 소개
 
-Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다.
-<br><br>
+Vanilla.js + TMDB API를 사용한 영화 소개 및 검색 사이트입니다. [발표 PPT 링크](https://www.canva.com/design/DAF4OZiRmho/JIC3xtEBWHQRTP5aVohCAg/view?utm_content=DAF4OZiRmho&utm_campaign=designshare&utm_medium=link&utm_source=editor)
+<br><br> 
+
+
+# 🎀 팀원 소개
+
+|                            박시은                            |                            강지수                            |                            서지원                            |                            이혜진                            | 
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                          이미지                          |                           이미지 |                             이미지                       |                          이미지                              |       
+|       [@MyNameSieun](https://github.com/MyNameSieun) |              [@jigico](https://github.com/jigico)         |           [@seopport](https://github.com/seopport)                 |                  [@we-are-good](https://github.com/we-are-good/javascript_indivisual)          |       
+|                         팀장                          |                          팀원                         |                           팀원                           |                        팀원                         |   
+|                         Frontend                          |                       Frontend                         |              Frontend                        |                        Frontend                        |  
+   
+
+<br>
+
 # ⏰ 개발 기간
 
 2024.01.06 ~ 2024.01.15 (10일)
