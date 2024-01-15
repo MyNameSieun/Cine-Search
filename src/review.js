@@ -76,6 +76,7 @@ countReview();
 //비밀번호 확인 모달 노출
 const confirmPasswordModal = () => {
   $modal.style.display = "flex";
+  $checkPassword.focus();
 };
 
 //리뷰 삭제 기능
@@ -117,9 +118,10 @@ const deleteReview = (targetId) => {
   console.log(targetId);
   console.log(targetPassword);
   alert("삭제가 완료되었습니다.");
+  deleteReviewHtml(deleteTargetId);
+  closeModal();
   countReview();
-  deleteTargetId = null; //새로고침 안할거면 날려야함.
-  location.reload();
+  // location.reload();
 };
 
 //비밀번호 확인 모달 닫기 기능
@@ -128,6 +130,20 @@ const closeModal = () => {
   deleteTargetId = null; //리뷰삭제 취소하여 타겟 아이디 삭제.
   $checkPassword.value = "";
 };
+
+//리뷰 삭제 시 html 삭제
+function deleteReviewHtml(deleteTargetId) {
+  let reviewEl = document.querySelectorAll(".comment-wrap-box");
+  //리뷰 리스트에서 forEach 돌면서 삭제할 리뷰 id 와 같은 id 를 가지고 있는 리뷰 삭제
+  reviewEl.forEach((el, idx) => {
+    if (el.id !== "noReview") {
+      const target = el.querySelector(".comment-id").value;
+      if (deleteTargetId === target) {
+        el.remove();
+      }
+    }
+  });
+}
 
 //추가 버튼 눌렀을 때 리뷰 바로 추가
 function addComment(name, contents, id) {
@@ -143,10 +159,11 @@ function addComment(name, contents, id) {
     nowContents = nowContents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
   }
 
+  const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
   const addHTML = `<div class="comment-wrap-box">
   <div class="thumb-name-comment">
-    <div class="thumb-box-in-list"></div>
-    <div class="comment-contents">
+  <div class="thumb-box-in-list" id="thumb" style="background-color:${randomColor}"><span>${nowWriter[0]}</span></div>
+  <div class="comment-contents">
       <span class="writer-name">${nowWriter}</span>
       <p class="writed-comment">${nowContents}</p>
     </div>

@@ -28,9 +28,10 @@ const addComments = () => {
       contents = contents.replace(/\n/g, "<br>"); // /n이 담긴 문자열(/ \n /)을 모두 가져와서(g) br로 변환해라
     }
 
+    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     const addHTML = `<div class="comment-wrap-box">
     <div class="thumb-name-comment">
-      <div class="thumb-box-in-list" id="thumb">${writer[0]}</div>
+      <div class="thumb-box-in-list" id="thumb" style="background-color:${randomColor}"><span>${writer[0]}</span></div>
       <div class="comment-contents">
         <span class="writer-name" id="writerName">${writer}</span>
         <p class="writed-comment">${contents}</p>
@@ -44,6 +45,9 @@ const addComments = () => {
     </div>`;
 
     $commentList.innerHTML += addHTML;
+
+    // const $thumnail = document.querySelector("#thumb");
+    // $thumnail.style.backgroundColor = `${randomColor}`;
 
     // const thumbnailText = writer[0];
     // const $thumbnail = document.querySelector("#thumb");
