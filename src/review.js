@@ -6,7 +6,7 @@ const $btnCancel = document.querySelector(".btn-cancel");
 const $btnSend = document.querySelector(".btn-send");
 const $writer = document.querySelector("#writer");
 const $password = document.querySelector("#password");
-const $commentList = document.querySelector("#commentList");
+const commentList = document.querySelector("#commentList");
 const $modal = document.querySelector(".modal-wrap");
 const $checkPassword = document.querySelector("#checkPassword");
 const $btnModalClose = document.querySelector(".btn-modal-close");
@@ -139,7 +139,6 @@ function deleteReviewHtml(deleteTargetId) {
       }
     }
   });
-
 }
 
 //추가 버튼 눌렀을 때 리뷰 바로 추가
@@ -172,7 +171,7 @@ function addComment(name, contents, id) {
   </div>
   </div>`;
 
-  $commentList.innerHTML += addHTML;
+  commentList.innerHTML += addHTML;
 }
 // 이벤트 영역 시작 ============
 
@@ -240,7 +239,7 @@ $reviewTextarea.addEventListener("keyup", () => {
 });
 
 //리뷰 삭제 이벤트
-$commentList.addEventListener("click", (event) => {
+commentList.addEventListener("click", (event) => {
   if (event.target.className === "btn-review-remove") {
     deleteTargetId = event.target.parentElement.querySelector(".comment-id").value;
     confirmPasswordModal();

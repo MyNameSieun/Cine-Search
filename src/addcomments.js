@@ -1,6 +1,6 @@
 import { loadData } from "./review.js";
 
-const $commentList = document.getElementById("commentList");
+const commentList = document.getElementById("commentList");
 
 const urlSearch = new URLSearchParams(location.search);
 const movieId = urlSearch.get("id");
@@ -43,7 +43,7 @@ const addComments = () => {
     </div>
     </div>`;
 
-    $commentList.innerHTML += addHTML;
+    commentList.innerHTML += addHTML;
   });
 };
 
@@ -52,11 +52,11 @@ function theresNoReview() {
     const noReviewsHTML = `
     <span class="no-reviews">작성된 리뷰가 없습니다.</span>`;
 
-    const $noReviewsEl = document.createElement("div");
-    $noReviewsEl.classList.add("comment-wrap-box");
-    $noReviewsEl.id = "noReview";
-    $noReviewsEl.innerHTML = noReviewsHTML;
-    $commentList.appendChild($noReviewsEl);
+    const noReviewsEl = document.createElement("div");
+    noReviewsEl.classList.add("comment-wrap-box");
+    noReviewsEl.id = "noReview";
+    noReviewsEl.innerHTML = noReviewsHTML;
+    commentList.appendChild(noReviewsEl);
   }
 }
 

@@ -2,7 +2,7 @@
 const api_key = "13b14dad7e58423573b90a27c47ebfbf";
 const urlSearch = new URLSearchParams(location.search);
 const movieId = urlSearch.get("id");
-const $trailerContainer = document.querySelector(".trailer-container");
+const trailerContainer = document.querySelector(".trailer-container");
 
 const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${api_key}`;
 
@@ -26,7 +26,7 @@ const renderTrailer = async () => {
   const onlyTrailers = movieVideoData.filter((videos) => videos.type === "Trailer"); //type: "Trailer" 부분만 가져오기
   const trailerKey = onlyTrailers[0].key; // 유튜브 링크에 연걸할 키
   //   console.log(trailerKey);
-  $trailerContainer.innerHTML = `<iframe
+  trailerContainer.innerHTML = `<iframe
   src="https://www.youtube.com/embed/${trailerKey}" 
   title="YouTube video player"
   frameborder="0"
